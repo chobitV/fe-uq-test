@@ -1,0 +1,40 @@
+@import "_import";
+
+
+// =============================================================================
+// IMPORT
+// =============================================================================
+
+// base
+// @import "base/_fonts";
+@import "base/_normalize";
+@import "base/_grid";
+@import "base/_typography";
+@import "base/_helpers";
+
+// components
+@import "components/_btn";
+@import "components/_form";
+@import "components/_icon";
+@import "components/_section";
+
+// layout
+@import "layout/_global-layout";
+@import "layout/_header";
+    @import "layout/_menu";
+    @import "layout/_search";
+
+    @import "layout/layout-section/_section-slider";
+    @import "layout/layout-section/_section-choose-us";
+    @import "layout/layout-section/_section-about";
+    @import "layout/layout-section/_section-contact";
+
+@import "layout/_footer";
+
+// vendors
+@import "vendors/_swiper-slider";
+
+// include mixin
+@include get-animate((fadeIn, fadeInUp, fadeInLeft, fadeInRight, fadeInDown, flipInY, swing));
+
+// end IMPORT

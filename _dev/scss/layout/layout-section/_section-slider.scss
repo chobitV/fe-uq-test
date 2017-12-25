@@ -1,0 +1,238 @@
+
+
+// =============================================================================
+// SECTION SLIDER
+// =============================================================================
+
+.section-slider {
+    padding-top: 61px;
+    background: linear-gradient(135deg, #00bff3 15%, #673ab7, #673ab7);
+
+    // @media (min-width: 1600px) {
+    //     position: relative;
+    //     z-index: 2;
+    // }
+}
+
+// end SECTION SLIDER
+
+
+
+
+
+// =============================================================================
+// SLIDES
+// =============================================================================
+
+// container
+.slides-container {
+
+    // navigation buttons
+    .slides-nav-btn {
+        @media (max-width: $bp-t - 1) {
+            display: none;
+        }
+
+        @media (min-width: $bp-t) {
+            position: absolute;
+            top: 50%;
+            z-index: 10;
+            margin-top: -30px;
+        }
+
+
+        // previous
+        &--prev {
+            @media (min-width: $bp-t) {
+                left: $content-padding-m;
+            }
+
+            @media (min-width: $bp-d) {
+                left: $content-padding;
+            }
+        }
+
+        // next
+        &--next {
+            @media (min-width: $bp-t) {
+                right: $content-padding-m;
+            }
+
+            @media (min-width: $bp-d) {
+                right: $content-padding;
+            }
+        }
+    }
+
+    // pagination
+    .slides-pagination {
+        position: absolute;
+        z-index: 10;
+        left: 50%;
+        bottom: 15px;
+        transform: translateX(-50%);
+
+        @media (min-width: $bp-l) {
+            bottom: 41px;
+        }
+    }
+}
+
+
+
+// slides list
+.slides-list {
+
+    // item
+    &__item {
+        &.swiper-slide-active {
+
+        }
+    }
+}
+
+
+
+// slides box
+.slide-box {
+    position: relative;
+
+    // image
+    &__img {
+        padding-bottom: calc(100vh - 61px);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.2;
+
+        @media (min-width: $bp-l) {
+            padding-bottom: 49.438%;
+        }
+
+        @media (min-width: 1600px) {
+            padding-bottom: calc(100vh - 70px);
+        }
+    }
+
+    // container
+    &__container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // description
+    &__descr {
+        color: #fff;
+        text-align: center;
+
+        @media (min-width: $bp-t) {
+            padding-left: 95px;
+            padding-right: 95px;
+        }
+
+        @media (min-width: $bp-l) {
+            padding-left: 120px;
+            padding-right: 120px;
+        }
+    }
+
+    // title
+    &__title {
+        margin-bottom: 0.5em;
+
+        span {
+            color: color(yellow);
+        }
+    }
+
+    // text
+    &__text {
+        @media (min-width: $bp-t) {
+            font-size: 1rem;
+        }
+    }
+}
+
+
+
+// navigation buttons
+.slides-nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    background: rgba(#fff, .2);
+    cursor: pointer;
+    transition: background-color .2s;
+
+    // icon
+    .icon {
+        transition: transform .2s;
+    }
+
+
+    // hover
+    &:hover {
+        background-color: rgba(#fff, .3);
+
+        .icon {
+            will-change: transform;
+        }
+    }
+
+    // active
+    &:active {
+        background-color: rgba(#fff, .5);
+
+        .icon {
+            transform: scale(1.2);
+        }
+    }
+
+
+    // previous
+    &--prev {
+
+    }
+
+    // next
+    &--next {
+
+    }
+}
+
+
+
+// pagination
+.slides-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // item
+    &__i {
+        display: block;
+        width: 7px;
+        height: 7px;
+        margin-left: 4px;
+        margin-right: 4px;
+        border-radius: 50%;
+        background-color: #b7b7b7;
+        cursor: pointer;
+
+        // active
+        &--active {
+            background-color: #fff;
+        }
+    }
+}
+
+// end SLIDES

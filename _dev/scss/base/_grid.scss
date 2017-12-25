@@ -1,0 +1,360 @@
+
+
+// =============================================================================
+// GRID VARIABLE
+// =============================================================================
+
+// global
+$grid-class: true;
+
+
+// grid generation class
+$grid-class-standart: true; // .col-[bp]-[n] { ... }
+$grid-class-offset: true;  // left: .col-[bp]-offset-[n] { ... }, right: .col-[bp]-offset-r-[n] { ... }
+$grid-class-align: false;   //  ...
+$grid-class-extend: false;  //  %col-[bp]-[n] { ... }
+
+
+// value grid
+$col-count: 12;
+$col-padding: $gutter;
+
+
+// grid class
+$col-class: col;
+$col-offset-class: offset;
+$row-class: row;
+$container-class: container;
+
+$breakpoint: (
+    mobile: (
+        name: xs,
+        bp: 320px
+    ),
+    laptop: (
+        name: sm,
+        bp: $bp-l
+    ),
+    desktop: (
+        name: lg,
+        bp: $bp-d,
+        container: 1170px
+    ),
+);
+
+// end GRID VARIABLE
+
+
+
+
+
+// =============================================================================
+// GRID FUNCTION
+// =============================================================================
+
+// Decimal-round
+@function decimal-round($number, $digits: 0, $mode: round) {
+    $n: 1;
+    // $number must be a number
+    @if type-of($number) != number {
+        @warn '#{ $number } is not a number.';
+        @return $number;
+    }
+    // $digits must be a unitless number
+    @if type-of($digits) != number {
+        @warn '#{ $digits } is not a number.';
+        @return $number;
+    } @else if not unitless($digits) {
+        @warn '#{ $digits } has a unit.';
+        @return $number;
+    }
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+    @if $mode == round {
+        @return round($number * $n) / $n;
+    } @else if $mode == ceil {
+        @return ceil($number * $n) / $n;
+    } @else if $mode == floor {
+        @return floor($number * $n) / $n;
+    } @else {
+        @warn '#{ $mode } is undefined keyword.';
+        @return $number;
+    }
+}
+
+
+// Map-deep-set
+@function map-deep-set($map, $keys.../*, $value */) {
+    $map-list: ($map,);
+    $result: null;
+
+    @if length($keys) == 2 {
+        @return map-merge($map, (nth($keys, 1): nth($keys, -1)));
+    }
+
+    @for $i from 1 through length($keys) - 2 {
+        $map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
+    }
+
+    @for $i from length($map-list) through 1 {
+        $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
+    }
+
+    @return $result;
+}
+
+
+// Map-deep-get
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+
+// Get rounded value
+@function get-rounded($val) {
+    $value: 100 / ($col-count / $val);
+    $value-round: decimal-round($value, 4) + %;
+    @return $value-round;
+}
+
+// end GRID FUNCTION
+
+
+
+
+
+// =============================================================================
+// MIXIN GENERATION COL
+// =============================================================================
+
+// General class col
+@mixin cycle-general-col-class($n) {
+    [class*='#{$col-class}-#{$n}'] {
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        padding-right: $col-padding;
+        padding-left: $col-padding;
+    }
+}
+
+
+// Standart class col
+@mixin cycle-standart-col-class($n, $prefix: '.') {
+    #{unquote($prefix)}#{$col-class}-#{$n} {
+        flex-grow: 1;
+        flex-basis: 0;
+        max-width: 100%;
+    }
+
+    @for $i from 1 through $col-count {
+        #{unquote($prefix)}#{$col-class}-#{$n}-#{$i} {
+            flex-basis: get-rounded($i);
+            max-width: get-rounded($i);
+        }
+    }
+}
+
+
+// Offset class col
+@mixin cycle-offset-col-class($n) {
+    @for $i from 1 through $col-count {
+        // margin left
+        .#{$col-class}-#{$n}-#{$col-offset-class}-#{$i} {
+            margin-left: get-rounded($i);
+        }
+
+        // margin right
+        .#{$col-class}-#{$n}-#{$col-offset-class}-r-#{$i} {
+            margin-right: get-rounded($i);
+        }
+    }
+}
+
+
+// Align class col
+@mixin cycle-align-col-class($n) {
+    .start-#{$n} {
+        justify-content: flex-start;
+        text-align: start;
+    }
+
+    .center-#{$n} {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .end-#{$n} {
+        justify-content: flex-end;
+        text-align: end;
+    }
+
+    .top-#{$n} {
+        align-items: flex-start;
+    }
+
+    .middle-#{$n} {
+        align-items: center;
+    }
+
+    .bottom-#{$n} {
+        align-items: flex-end;
+    }
+
+    .around-#{$n} {
+        justify-content: space-around;
+    }
+
+    .between-#{$n} {
+        justify-content: space-between;
+    }
+
+    .first-#{$n} {
+        order: -1;
+    }
+
+    .last-#{$n} {
+        order: 1;
+    }
+}
+
+// end MIXIN GENERATION COL
+
+
+
+
+// =============================================================================
+// GENERATION COL
+// =============================================================================
+
+@each $bp, $bp-map in $breakpoint {
+    $get-name: map-deep-get($breakpoint, $bp, name);
+    $get-bp: map-deep-get($breakpoint, $bp, bp);
+
+    @if $grid-class {
+
+        @if $get-name == xs {
+
+            @if $grid-class-standart {
+                // add general class col ([class*='col-[bp]'])
+                @include cycle-general-col-class($get-name);
+
+                // add standart class col (.col-[bp]-[n])
+                @include cycle-standart-col-class($get-name);
+            }
+
+            @if $grid-class-offset {
+                // add offset class col (.col-[bp]-offset-[n])
+                @include cycle-offset-col-class($get-name);
+            }
+
+            @if $grid-class-align {
+                // add align class col
+                @include cycle-align-col-class($get-name);
+            }
+
+            @if $grid-class-extend {
+                // add extend class col (%col-[bp]-[n])
+                @include cycle-standart-col-class($get-name, '%');
+            }
+        }
+
+        @else {
+            @media (min-width: $get-bp) {
+
+                @if $grid-class-standart {
+                    // add general class col ([class*='col-[bp]'])
+                    @include cycle-general-col-class($get-name);
+
+                    // add standart class col (.col-[bp]-[n])
+                    @include cycle-standart-col-class($get-name);
+                }
+
+                @if $grid-class-offset {
+                    // add offset class col (.col-[bp]-offset-[n])
+                    @include cycle-offset-col-class($get-name);
+                }
+
+                @if $grid-class-align {
+                    // add align class col
+                    @include cycle-align-col-class($get-name);
+                }
+
+                @if $grid-class-extend {
+                    // add extend class col (%col-[bp]-[n])
+                    @include cycle-standart-col-class($get-name, '%');
+                }
+            }
+        }
+
+    }
+}
+
+// end GENERATION COL
+
+
+
+
+
+// =============================================================================
+// GENERATION COLUMN
+// =============================================================================
+
+.#{$container-class} {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $gutter;
+    padding-right: $gutter;
+}
+
+@if $grid-class-standart and $grid-class {
+    .#{$container-class} {
+        @each $bp, $bp-map in $breakpoint {
+            $get-container: map-deep-get($breakpoint, $bp, container);
+            $get-bp: map-deep-get($breakpoint, $bp, bp);
+
+            @if $get-container {
+                width: $get-container;
+            }
+        }
+    }
+}
+
+// end GENERATION COLUMN
+
+
+
+
+
+// =============================================================================
+// GENERATION ROW
+// =============================================================================
+
+@mixin row {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: - $col-padding;
+    margin-left: - $col-padding;
+}
+
+@if $grid-class-standart and $grid-class {
+    .#{$row-class} {
+        @include row;
+    }
+}
+
+@if $grid-class-extend and $grid-class  {
+    %#{$row-class} {
+        @include row;
+    }
+}
+
+// end GENERATION ROW

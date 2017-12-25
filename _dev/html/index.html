@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>UPQODE</title>
+        <meta name="description" content="description">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- link preload -->
+        <link rel="preload" href="fonts/lato/Lato-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="img/section-slider/slide-1.jpg" as="image">
+
+        <!-- style -->
+        <link rel="stylesheet" href="css/inline.css">
+        <link rel="stylesheet" href="css/global.css">
+
+    </head>
+
+    <body>
+
+        <!-- WRAPPER -->
+        <div class="wrapper">
+
+            {% include "layout/_header.html" %}
+
+            <!-- MAIN -->
+            <main class="main">
+
+                {% include "section/_section-slider.html" %}
+
+                {% include "section/_section-choose-us.html" %}
+
+                {% include "section/_section-about.html" %}
+
+                {% include "section/_section-contact.html" %}
+
+            </main>
+            <!-- end MAIN -->
+
+            {% include "layout/_footer.html" %}
+
+        </div>
+        <!-- end WRAPPER -->
+
+        {% include "layout/_script.html" %}
+
+    </body>
+</html>

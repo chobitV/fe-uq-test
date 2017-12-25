@@ -1,0 +1,55 @@
+
+
+// =============================================================================
+// ICONS
+// =============================================================================
+
+// icon
+.icon {
+    display: inline-block;
+    line-height: 0;
+    font-style: normal;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &:before {
+        display: block;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+
+
+// icon search plus
+.icon-search {
+    width: 13px;
+    height: 13px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAAflBMVEUAAABbW1tbW1tcXFxcXFxbW1tbW1tjY2NaWlpZWVlcXFxbW1tcXFxgYGBeXl5ra2tiYmJdXV1hYWFhYWFbW1tgYGBcXFxDQ0NbW1tERERbW1s/Pz82NjZfX19bW1tpaWkyMjJmZmZcXFxkZGRWVlZbW1tcXFxYWFhoaGhlZWVG7QkaAAAAJXRSTlMA+r6zqlk9EOvTzrhJ8Ozp49e6rqCdmZaNfXRlUDMmGxsaFgUDzxrS8QAAAGxJREFUCNdNx0cSgzAQRNEeRYNxztkESXD/CyINUPAX3fUAfA5EJC24d5dr89yEf4Jtb0jtd2kvDpwNRVw6Y2ilkq6TZBxFA2qn4/66B+uY8b3akyl1FgS4YuvICeVH4msqQHrRYG7tcyx57wHh8AUo5oNjJAAAAABJRU5ErkJggg==");
+}
+
+
+
+// icon arrow
+.icon-arrow {
+    width: 10px;
+    height: 10px;
+
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0LjU1IiBoZWlnaHQ9IjcuOCI+ICA8cGF0aCBkPSJNNC40NyA0LjA4TC44MyA3LjcyYS4yNy4yNyAwIDAgMS0uMTguMDguMjcuMjcgMCAwIDEtLjE4LS4wOGwtLjM5LS4zOUEuMjUuMjUgMCAwIDEgMCA3LjE1YS4yNy4yNyAwIDAgMSAuMDgtLjE4TDMuMTUgMy45LjA4LjgzYS4yNS4yNSAwIDAgMSAwLS4zNkwuNDcuMDhBLjI3LjI3IDAgMCAxIC42NSAwYS4yNy4yNyAwIDAgMSAuMTguMDhsMy42NCAzLjY0YS4yNS4yNSAwIDAgMSAwIC4zNnoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=");
+    }
+
+    // left
+    &--left {
+        &:before {
+            transform: rotateY(180deg);
+        }
+    }
+}
+
+// end ICONS

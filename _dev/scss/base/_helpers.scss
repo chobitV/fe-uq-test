@@ -1,0 +1,17 @@
+
+
+// =============================================================================
+// HELPERS
+// =============================================================================
+
+// visually hidden
+.visually-hidden {
+	@include visually-hidden;
+}
+
+// expanded click area
+.expanded-area {
+    @include expanded-area;
+}
+
+// end HELPERS

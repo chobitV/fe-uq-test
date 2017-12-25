@@ -1,0 +1,81 @@
+
+
+// =============================================================================
+// FONTS
+// =============================================================================
+
+$font-lato: "Lato";
+$font-family: sans-serif;
+$font: $font-lato, $font-family;
+
+// end FONTS
+
+
+
+
+
+// =============================================================================
+// MEDIA QUERIES BREAKPOINTS
+// =============================================================================
+
+// desktop
+$bp-d: 1025px;
+
+// laptop
+$bp-l: 769px;
+
+// tablet
+$bp-t: 480px;
+
+// gutter
+$gutter: 15px;
+
+// global padding content
+$content-padding: 30px;
+$content-padding-m: 15px;
+
+// end MEDIA QUERIES BREAKPOINTS
+
+
+
+
+
+// =============================================================================
+// Z-INDEX
+// =============================================================================
+
+$z-index: (
+	header: 100,
+	// main: 70,
+	footer: 50,
+    // modal: 500,
+	nav: 400,
+);
+
+@function z-index($key) {
+    @return map-get($z-index, $key);
+}
+
+// end Z-INDEX
+
+
+
+
+
+// =============================================================================
+// COLOR
+// =============================================================================
+
+$theme-color: (
+    dark: #373737,
+    yellow: #ffff00,
+);
+
+@function color($color) {
+	$get-color: map-get($theme-color, $color);
+	@return $get-color;
+}
+
+$base-body-color: color(dark);
+
+// end COLOR

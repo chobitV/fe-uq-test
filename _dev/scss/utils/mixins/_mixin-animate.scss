@@ -1,0 +1,2097 @@
+
+
+// =============================================================================
+// ANIMATE ( https://daneden.github.io/animate.css/ )
+// =============================================================================
+
+// Global var
+$global-animate: true; // enable/disable animation
+$keyframes-class: false; // add class .keyframes-name
+
+
+
+// Animate keyframes name/var
+$bounce: bounce;
+$flash: flash;
+$pulse: pulse;
+$rubberBand: rubberBand;
+$shake: shake;
+$swing: swing;
+$tada: tada;
+$wobble: wobble;
+$jello: jello;
+$bounceIn: bounceIn;
+$bounceInDown: bounceInDown;
+$bounceInLeft: bounceInLeft;
+$bounceInRight: bounceInRight;
+$bounceInUp: bounceInUp;
+$bounceOut: bounceOut;
+$bounceOutDown: bounceOutDown;
+$bounceOutLeft: bounceOutLeft;
+$bounceOutRight: bounceOutRight;
+$bounceOutUp: bounceOutUp;
+$fadeIn: fadeIn;
+$fadeInDown: fadeInDown;
+$fadeInDownBig: fadeInDownBig;
+$fadeInLeft: fadeInLeft;
+$fadeInLeftBig: fadeInLeftBig;
+$fadeInRight: fadeInRight;
+$fadeInRightBig: fadeInRightBig;
+$fadeInUp: fadeInUp;
+$fadeInUpBig: fadeInUpBig;
+$fadeOut: fadeOut;
+$fadeOutDown: fadeOutDown;
+$fadeOutDownBig: fadeOutDownBig;
+$fadeOutLeft: fadeOutLeft;
+$fadeOutLeftBig: fadeOutLeftBig;
+$fadeOutRight: fadeOutRight;
+$fadeOutRightBig: fadeOutRightBig;
+$fadeOutUp: fadeOutUp;
+$fadeOutUpBig: fadeOutUpBig;
+$flip: flip;
+$flipInX: flipInX;
+$flipInY: flipInY;
+$flipOutX: flipOutX;
+$flipOutY: flipOutY;
+$lightSpeedIn: lightSpeedIn;
+$lightSpeedOut: lightSpeedOut;
+$rotateIn: rotateIn;
+$rotateInDownLeft: rotateInDownLeft;
+$rotateInDownRight: rotateInDownRight;
+$rotateInUpLeft: rotateInUpLeft;
+$rotateInUpRight: rotateInUpRight;
+$rotateOut: rotateOut;
+$rotateOutDownLeft: rotateOutDownLeft;
+$rotateOutDownRight: rotateOutDownRight;
+$rotateOutUpLeft: rotateOutUpLeft;
+$rotateOutUpRight: rotateOutUpRight;
+$hinge: hinge;
+$rollIn: rollIn;
+$rollOut: rollOut;
+$zoomIn: zoomIn;
+$zoomInDown: zoomInDown;
+$zoomInLeft: zoomInLeft;
+$zoomInRight: zoomInRight;
+$zoomInUp: zoomInUp;
+$zoomOut: zoomOut;
+$zoomOutDown: zoomOutDown;
+$zoomOutLeft: zoomOutLeft;
+$zoomOutRight: zoomOutRight;
+$zoomOutUp: zoomOutUp;
+$slideInDown: slideInDown;
+$slideInLeft: slideInLeft;
+$slideInRight: slideInRight;
+$slideInUp: slideInUp;
+$slideOutDown: slideOutDown;
+$slideOutLeft: slideOutLeft;
+$slideOutRight: slideOutRight;
+$slideOutUp: slideOutUp;
+$flash: flash;
+$spin: spin;
+
+
+
+// Mixin keyframes
+// @mixin keyframes($name) {
+//     @-webkit-keyframes #{$name} {
+//         @content;
+//     }
+
+//     @keyframes #{$name} {
+//         @content;
+//     }
+// }
+
+// Mixin get keyframes
+@mixin getKeyframes($name) {
+
+    // bounce
+    @if $name == $bounce {
+        @include keyframes (#{$bounce}) {
+            from, 20%, 53%, 80%, to {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                transform: translate3d(0,0,0);
+            }
+
+            40%, 43% {
+                animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+                transform: translate3d(0, -30px, 0);
+            }
+
+            70% {
+                animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+                transform: translate3d(0, -15px, 0);
+            }
+
+            90% {
+                transform: translate3d(0,-4px,0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$bounce} {
+                animation-name: #{$bounce};
+                transform-origin: center bottom;
+            }
+        }
+    }
+
+
+    // flash
+    @if $name == $flash {
+        @include keyframes (#{$flash}) {
+            from, 50%, to {
+                opacity: 1;
+            }
+
+            25%, 75% {
+                opacity: 0;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$flash} {
+                animation-name: #{$flash};
+            }
+        }
+    }
+
+
+    // pulse
+    @if $name == $pulse {
+        @include keyframes (#{$pulse}) {
+            from {
+                transform: scale3d(1, 1, 1);
+            }
+
+            50% {
+                transform: scale3d(1.05, 1.05, 1.05);
+            }
+
+            to {
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$pulse} {
+                animation-name: #{$pulse};
+            }
+        }
+    }
+
+
+    // rubberBand
+    @if $name == $rubberBand {
+        @include keyframes (#{$rubberBand}) {
+            from {
+                transform: scale3d(1, 1, 1);
+            }
+
+            30% {
+                transform: scale3d(1.25, 0.75, 1);
+            }
+
+            40% {
+                transform: scale3d(0.75, 1.25, 1);
+            }
+
+            50% {
+                transform: scale3d(1.15, 0.85, 1);
+            }
+
+            65% {
+                transform: scale3d(.95, 1.05, 1);
+            }
+
+            75% {
+                transform: scale3d(1.05, .95, 1);
+            }
+
+            to {
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$rubberBand} {
+                animation-name: #{$rubberBand};
+            }
+        }
+    }
+
+
+    // shake
+    @if $name == $shake {
+        @include keyframes (#{$shake}) {
+            from, to {
+                transform: translate3d(0, 0, 0);
+            }
+
+            10%, 30%, 50%, 70%, 90% {
+                transform: translate3d(-10px, 0, 0);
+            }
+
+            20%, 40%, 60%, 80% {
+                transform: translate3d(10px, 0, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$shake} {
+                animation-name: #{$shake};
+            }
+        }
+    }
+
+
+    // swing
+    @if $name == $swing {
+        @include keyframes (#{$swing}) {
+            20% {
+                transform: rotate3d(0, 0, 1, 15deg);
+            }
+
+            40% {
+                transform: rotate3d(0, 0, 1, -10deg);
+            }
+
+            60% {
+                transform: rotate3d(0, 0, 1, 5deg);
+            }
+
+            80% {
+                transform: rotate3d(0, 0, 1, -5deg);
+            }
+
+            to {
+                transform: rotate3d(0, 0, 1, 0deg);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$swing} {
+                transform-origin: top center;
+                animation-name: #{$swing};
+            }
+        }
+    }
+
+
+    // tada
+    @if $name == $tada {
+        @include keyframes (#{$tada}) {
+            from {
+                transform: scale3d(1, 1, 1);
+            }
+
+            10%, 20% {
+                transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+            }
+
+            30%, 50%, 70%, 90% {
+                transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+            }
+
+            40%, 60%, 80% {
+                transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+            }
+
+            to {
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$tada} {
+                animation-name: #{$tada};
+            }
+        }
+    }
+
+
+    // wobble
+    @if $name == $wobble {
+        @include keyframes (#{$wobble}) {
+            from {
+                transform: none;
+            }
+
+            15% {
+                transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+            }
+
+            30% {
+                transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+            }
+
+            45% {
+                transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+            }
+
+            60% {
+                transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+            }
+
+            75% {
+                transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+            }
+
+            to {
+                transform: none;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$wobble} {
+                animation-name: #{$wobble};
+            }
+        }
+    }
+
+
+    // jello
+    @if $name == $jello {
+        @include keyframes (#{$jello}) {
+            from, 11.1%, to {
+                transform: none;
+            }
+
+            22.2% {
+                transform: skewX(-12.5deg) skewY(-12.5deg);
+            }
+
+            33.3% {
+                transform: skewX(6.25deg) skewY(6.25deg);
+            }
+
+            44.4% {
+                transform: skewX(-3.125deg) skewY(-3.125deg);
+            }
+
+            55.5% {
+                transform: skewX(1.5625deg) skewY(1.5625deg);
+            }
+
+            66.6% {
+                transform: skewX(-0.78125deg) skewY(-0.78125deg);
+            }
+
+            77.7% {
+                transform: skewX(0.390625deg) skewY(0.390625deg);
+            }
+
+            88.8% {
+                transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$jello} {
+                animation-name: #{$jello};
+                transform-origin: center;
+            }
+        }
+    }
+
+
+    // bounceIn
+    @if $name == $bounceIn {
+        @include keyframes (#{$bounceIn}) {
+            from, 20%, 40%, 60%, 80%, to {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+
+            0% {
+                opacity: 0;
+                transform: scale3d(.3, .3, .3);
+            }
+
+            20% {
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+
+            40% {
+                transform: scale3d(.9, .9, .9);
+            }
+
+            60% {
+                opacity: 1;
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+
+            80% {
+                transform: scale3d(.97, .97, .97);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$bounceIn} {
+                animation-name: #{$bounceIn};
+            }
+        }
+    }
+
+
+    // bounceInDown
+    @if $name == $bounceInDown {
+        @include keyframes (#{$bounceInDown}) {
+            from, 60%, 75%, 90%, to {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+
+            0% {
+                opacity: 0;
+                transform: translate3d(0, -3000px, 0);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translate3d(0, 25px, 0);
+            }
+
+            75% {
+                transform: translate3d(0, -10px, 0);
+            }
+
+            90% {
+                transform: translate3d(0, 5px, 0);
+            }
+
+            to {
+                transform: none;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$bounceInDown} {
+                animation-name: #{$bounceInDown};
+            }
+        }
+    }
+
+
+    // bounceInLeft
+    @if $name == $bounceInLeft {
+        @include keyframes (#{$bounceInLeft}) {
+            from, 60%, 75%, 90%, to {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+
+            0% {
+                opacity: 0;
+                transform: translate3d(-3000px, 0, 0);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translate3d(25px, 0, 0);
+            }
+
+            75% {
+                transform: translate3d(-10px, 0, 0);
+            }
+
+            90% {
+                transform: translate3d(5px, 0, 0);
+            }
+
+            to {
+                transform: none;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$bounceInLeft} {
+                animation-name: #{$bounceInLeft};
+            }
+        }
+    }
+
+
+    // bounceInRight
+    @if $name == $bounceInRight {
+        @include keyframes (#{$bounceInRight}) {
+            from, 60%, 75%, 90%, to {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+
+            from {
+                opacity: 0;
+                transform: translate3d(3000px, 0, 0);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translate3d(-25px, 0, 0);
+            }
+
+            75% {
+                transform: translate3d(10px, 0, 0);
+            }
+
+            90% {
+                transform: translate3d(-5px, 0, 0);
+            }
+
+            to {
+                transform: none;
+            }
+        }
+
+        @if $keyframes-class {
+            .bounceInRight {
+                animation-name: bounceInRight;
+            }
+        }
+    }
+
+
+    // bounceInUp
+    @if $name == $bounceInUp {
+        @include keyframes (#{$bounceInUp}) {
+            from, 60%, 75%, 90%, to {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+
+            from {
+                opacity: 0;
+                transform: translate3d(0, 3000px, 0);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translate3d(0, -20px, 0);
+            }
+
+            75% {
+                transform: translate3d(0, 10px, 0);
+            }
+
+            90% {
+                transform: translate3d(0, -5px, 0);
+            }
+
+            to {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$bounceInUp} {
+                animation-name: #{$bounceInUp};
+            }
+        }
+    }
+
+
+    // bounceOut
+    @if $name == $bounceOut {
+        @include keyframes (#{$bounceOut}) {
+            20% {
+                transform: scale3d(.9, .9, .9);
+            }
+
+            50%, 55% {
+                opacity: 1;
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+
+            to {
+                opacity: 0;
+                transform: scale3d(.3, .3, .3);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$bounceOut} {
+                animation-name: #{$bounceOut};
+            }
+        }
+    }
+
+
+    // bounceOutDown
+    @if $name == $bounceOutDown {
+        @include keyframes (#{$bounceOutDown}) {
+            20% {
+                transform: translate3d(0, 10px, 0);
+            }
+
+            40%, 45% {
+                opacity: 1;
+                transform: translate3d(0, -20px, 0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translate3d(0, 2000px, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$bounceOutDown} {
+                animation-name: #{$bounceOutDown};
+            }
+        }
+    }
+
+
+    // bounceOutLeft
+    @if $name == $bounceOutLeft {
+        @include keyframes (#{$bounceOutLeft}) {
+            20% {
+                opacity: 1;
+                transform: translate3d(20px, 0, 0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translate3d(-2000px, 0, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$bounceOutLeft} {
+                animation-name: #{$bounceOutLeft};
+            }
+        }
+    }
+
+
+    // bounceOutRight
+    @if $name == $bounceOutRight {
+        @include keyframes (#{$bounceOutRight}) {
+            20% {
+                opacity: 1;
+                transform: translate3d(-20px, 0, 0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translate3d(2000px, 0, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$bounceOutRight} {
+                animation-name: #{$bounceOutRight};
+            }
+        }
+    }
+
+
+    // bounceOutUp
+    @if $name == $bounceOutUp {
+        @include keyframes (#{$bounceOutUp}) {
+            20% {
+                transform: translate3d(0, -10px, 0);
+            }
+
+            40%, 45% {
+                opacity: 1;
+                transform: translate3d(0, 20px, 0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translate3d(0, -2000px, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$bounceOutUp} {
+                animation-name: #{$bounceOutUp};
+            }
+        }
+    }
+
+
+    // fadeIn
+    @if $name == $fadeIn {
+        @include keyframes($fadeIn) {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeIn} {
+                animation-name: #{$fadeIn};
+            }
+        }
+    }
+
+
+    // fadeInDown
+    @if $name == $fadeInDown {
+        @include keyframes (#{$fadeInDown}) {
+            from {
+                opacity: 0;
+                transform: translate3d(0, -100%, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeInDown} {
+                animation-name: #{$fadeInDown};
+            }
+        }
+    }
+
+
+    // fadeInDownBig
+    @if $name == $fadeInDownBig {
+        @include keyframes (#{$fadeInDownBig}) {
+            from {
+                opacity: 0;
+                transform: translate3d(0, -2000px, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeInDownBig} {
+                animation-name: #{$fadeInDownBig};
+            }
+        }
+    }
+
+
+    // fadeInLeft
+    @if $name == $fadeInLeft {
+        @include keyframes (#{$fadeInLeft}) {
+            from {
+                opacity: 0;
+                transform: translate3d(-100%, 0, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeInLeft} {
+                animation-name: #{$fadeInLeft};
+            }
+        }
+    }
+
+
+    // fadeInLeftBig
+    @if $name == $fadeInLeftBig {
+        @include keyframes (#{$fadeInLeftBig}) {
+            from {
+                opacity: 0;
+                transform: translate3d(-2000px, 0, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeInLeftBig} {
+                animation-name: #{$fadeInLeftBig};
+            }
+        }
+    }
+
+
+    // fadeInRight
+    @if $name == $fadeInRight {
+        @include keyframes (#{$fadeInRight}) {
+            from {
+                opacity: 0;
+                transform: translate3d(100%, 0, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeInRight} {
+                animation-name: #{$fadeInRight};
+            }
+        }
+    }
+
+    // fadeInRightBig
+    @if $name == $fadeInRightBig {
+        @include keyframes (#{$fadeInRightBig}) {
+            from {
+                opacity: 0;
+                transform: translate3d(2000px, 0, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeInRightBig} {
+                animation-name: #{$fadeInRightBig};
+            }
+        }
+    }
+
+
+    // fadeInUp
+    @if $name == $fadeInUp {
+        @include keyframes (#{$fadeInUp}) {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 100%, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeInUp} {
+                animation-name: #{$fadeInUp};
+            }
+        }
+    }
+
+
+    // fadeInUpBig
+    @if $name == $fadeInUpBig {
+        @include keyframes (#{$fadeInUpBig}) {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 2000px, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeInUpBig} {
+                animation-name: #{$fadeInUpBig};
+            }
+        }
+    }
+
+
+    // fadeOut
+    @if $name == $fadeOut {
+        @include keyframes (#{$fadeOut}) {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeOut} {
+              animation-name: #{$fadeOut};
+          }
+      }
+  }
+
+
+
+    // fadeOutDown
+    @if $name == $fadeOutDown {
+        @include keyframes (#{$fadeOutDown}) {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                transform: translate3d(0, 100%, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeOutDown} {
+                animation-name: #{$fadeOutDown};
+            }
+        }
+    }
+
+
+    // fadeOutDownBig
+    @if $name == $fadeOutDownBig {
+        @include keyframes (#{$fadeOutDownBig}) {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                transform: translate3d(0, 2000px, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeOutDownBig} {
+                animation-name: #{$fadeOutDownBig};
+            }
+        }
+    }
+
+
+    // fadeOutLeft
+    @if $name == $fadeOutLeft {
+        @include keyframes (#{$fadeOutLeft}) {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                transform: translate3d(-100%, 0, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeOutLeft} {
+                animation-name: #{$fadeOutLeft};
+            }
+        }
+    }
+
+
+    // fadeOutLeftBig
+    @if $name == $fadeOutLeftBig {
+        @include keyframes (#{$fadeOutLeftBig}) {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                transform: translate3d(-2000px, 0, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeOutLeftBig} {
+                animation-name: #{$fadeOutLeftBig};
+            }
+        }
+    }
+
+
+    // fadeOutRight
+    @if $name == $fadeOutRight {
+        @include keyframes (#{$fadeOutRight}) {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                transform: translate3d(100%, 0, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeOutRight} {
+                animation-name: #{$fadeOutRight};
+            }
+        }
+    }
+
+
+    // fadeOutRightBig
+    @if $name == $fadeOutRightBig {
+        @include keyframes (#{$fadeOutRightBig}) {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                transform: translate3d(2000px, 0, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeOutRightBig} {
+                animation-name: #{$fadeOutRightBig};
+            }
+        }
+    }
+
+
+    // fadeOutUp
+    @if $name == $fadeOutUp {
+        @include keyframes (#{$fadeOutUp}) {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                transform: translate3d(0, -100%, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeOutUp} {
+                animation-name: #{$fadeOutUp};
+            }
+        }
+    }
+
+
+    // fadeOutUpBig
+    @if $name == $fadeOutUpBig {
+        @include keyframes (#{$fadeOutUpBig}) {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                transform: translate3d(0, -2000px, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$fadeOutUpBig} {
+                animation-name: #{$fadeOutUpBig};
+            }
+        }
+    }
+
+
+    // flip
+    @if $name == $flip {
+        @include keyframes (#{$flip}) {
+            from {
+                transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+                animation-timing-function: ease-out;
+            }
+
+            40% {
+                transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+                animation-timing-function: ease-out;
+            }
+
+            50% {
+                transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+                animation-timing-function: ease-in;
+            }
+
+            80% {
+                transform: perspective(400px) scale3d(.95, .95, .95);
+                animation-timing-function: ease-in;
+            }
+
+            to {
+                transform: perspective(400px);
+                animation-timing-function: ease-in;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$flip} {
+                backface-visibility: visible;
+                animation-name: #{$flip};
+            }
+        }
+    }
+
+
+    // flipInX
+    @if $name == $flipInX {
+        @include keyframes (#{$flipInX}) {
+            from {
+                transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+                animation-timing-function: ease-in;
+                opacity: 0;
+            }
+
+            40% {
+                transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+                animation-timing-function: ease-in;
+            }
+
+            60% {
+                transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+                opacity: 1;
+            }
+
+            80% {
+                transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+            }
+
+            to {
+                transform: perspective(400px);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$flipInX} {
+                backface-visibility: visible !important;
+                animation-name: #{$flipInX};
+            }
+        }
+    }
+
+
+    // flipInY
+    @if $name == $flipInY {
+        @include keyframes (#{$flipInY}) {
+            from {
+                transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+                animation-timing-function: ease-in;
+                opacity: 0;
+            }
+
+            40% {
+                transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+                animation-timing-function: ease-in;
+            }
+
+            60% {
+                transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+                opacity: 1;
+            }
+
+            80% {
+                transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+            }
+
+            to {
+                transform: perspective(400px);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$flipInY} {
+                backface-visibility: visible !important;
+                animation-name: #{$flipInY};
+            }
+        }
+    }
+
+
+    // flipOutX
+    @if $name == $flipOutX {
+        @include keyframes (#{$flipOutX}) {
+            from {
+                transform: perspective(400px);
+            }
+
+            30% {
+                transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+                opacity: 1;
+            }
+
+            to {
+                transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+                opacity: 0;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$flipOutX} {
+                animation-name: #{$flipOutX};
+                backface-visibility: visible !important;
+            }
+        }
+    }
+
+
+    // flipOutY
+    @if $name == $flipOutY {
+        @include keyframes (#{$flipOutY}) {
+            from {
+                transform: perspective(400px);
+            }
+
+            30% {
+                transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+                opacity: 1;
+            }
+
+            to {
+                transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+                opacity: 0;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$flipOutY} {
+                backface-visibility: visible !important;
+                animation-name: #{$flipOutY};
+            }
+        }
+    }
+
+
+    // lightSpeedIn
+    @if $name == $lightSpeedIn {
+        @include keyframes (#{$lightSpeedIn}) {
+            from {
+                transform: translate3d(100%, 0, 0) skewX(-30deg);
+                opacity: 0;
+            }
+
+            60% {
+                transform: skewX(20deg);
+                opacity: 1;
+            }
+
+            80% {
+                transform: skewX(-5deg);
+                opacity: 1;
+            }
+
+            to {
+                transform: none;
+                opacity: 1;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$lightSpeedIn} {
+                animation-name: #{$lightSpeedIn};
+                animation-timing-function: ease-out;
+            }
+        }
+    }
+
+
+    // lightSpeedOut
+    @if $name == $lightSpeedOut {
+        @include keyframes (#{$lightSpeedOut}) {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                transform: translate3d(100%, 0, 0) skewX(30deg);
+                opacity: 0;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$lightSpeedOut} {
+                animation-name: #{$lightSpeedOut};
+                animation-timing-function: ease-in;
+            }
+        }
+    }
+
+
+    // rotateIn
+    @if $name == $rotateIn {
+        @include keyframes (#{$rotateIn}) {
+            from {
+                transform-origin: center;
+                transform: rotate3d(0, 0, 1, -200deg);
+                opacity: 0;
+            }
+
+            to {
+                transform-origin: center;
+                transform: none;
+                opacity: 1;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$rotateIn} {
+                animation-name: #{$rotateIn};
+            }
+        }
+    }
+
+
+    // rotateInDownLeft
+    @if $name == $rotateInDownLeft {
+        @include keyframes (#{$rotateInDownLeft}) {
+            from {
+                transform-origin: left bottom;
+                transform: rotate3d(0, 0, 1, -45deg);
+                opacity: 0;
+            }
+
+            to {
+                transform-origin: left bottom;
+                transform: none;
+                opacity: 1;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$rotateInDownLeft} {
+                animation-name: #{$rotateInDownLeft};
+            }
+        }
+    }
+
+
+    // rotateInDownRight
+    @if $name == $rotateInDownRight {
+        @include keyframes (#{$rotateInDownRight}) {
+            from {
+                transform-origin: right bottom;
+                transform: rotate3d(0, 0, 1, 45deg);
+                opacity: 0;
+            }
+
+            to {
+                transform-origin: right bottom;
+                transform: none;
+                opacity: 1;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$rotateInDownRight} {
+                animation-name: #{$rotateInDownRight};
+            }
+        }
+    }
+
+
+    // rotateInUpLeft
+    @if $name == $rotateInUpLeft {
+        @include keyframes (#{$rotateInUpLeft}) {
+            from {
+                transform-origin: left bottom;
+                transform: rotate3d(0, 0, 1, 45deg);
+                opacity: 0;
+            }
+
+            to {
+                transform-origin: left bottom;
+                transform: none;
+                opacity: 1;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$rotateInUpLeft} {
+                animation-name: #{$rotateInUpLeft};
+            }
+        }
+    }
+
+
+    // rotateInUpRight
+    @if $name == $rotateInUpRight {
+        @include keyframes (#{$rotateInUpRight}) {
+            from {
+                transform-origin: right bottom;
+                transform: rotate3d(0, 0, 1, -90deg);
+                opacity: 0;
+            }
+
+            to {
+                transform-origin: right bottom;
+                transform: none;
+                opacity: 1;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$rotateInUpRight} {
+                animation-name: #{$rotateInUpRight};
+            }
+        }
+    }
+
+
+    // rotateOut
+    @if $name == $rotateOut {
+        @include keyframes (#{$rotateOut}) {
+            from {
+                transform-origin: center;
+                opacity: 1;
+            }
+
+            to {
+                transform-origin: center;
+                transform: rotate3d(0, 0, 1, 200deg);
+                opacity: 0;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$rotateOut} {
+                animation-name: #{$rotateOut};
+            }
+        }
+    }
+
+
+    // rotateOutDownLeft
+    @if $name == $rotateOutDownLeft {
+        @include keyframes (#{$rotateOutDownLeft}) {
+            from {
+                transform-origin: left bottom;
+                opacity: 1;
+            }
+
+            to {
+                transform-origin: left bottom;
+                transform: rotate3d(0, 0, 1, 45deg);
+                opacity: 0;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$rotateOutDownLeft} {
+                animation-name: #{$rotateOutDownLeft};
+            }
+        }
+    }
+
+
+    // rotateOutDownRight
+    @if $name == $rotateOutDownRight {
+        @include keyframes (#{$rotateOutDownRight}) {
+            from {
+                transform-origin: right bottom;
+                opacity: 1;
+            }
+
+            to {
+                transform-origin: right bottom;
+                transform: rotate3d(0, 0, 1, -45deg);
+                opacity: 0;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$rotateOutDownRight} {
+                animation-name: #{$rotateOutDownRight};
+            }
+        }
+    }
+
+
+    // rotateOutUpLeft
+    @if $name == $rotateOutUpLeft {
+        @include keyframes (#{$rotateOutUpLeft}) {
+            from {
+                transform-origin: left bottom;
+                opacity: 1;
+            }
+
+            to {
+                transform-origin: left bottom;
+                transform: rotate3d(0, 0, 1, -45deg);
+                opacity: 0;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$rotateOutUpLeft} {
+                animation-name: #{$rotateOutUpLeft};
+            }
+        }
+    }
+
+
+    // rotateOutUpRight
+    @if $name == $rotateOutUpRight {
+        @include keyframes (#{$rotateOutUpRight}) {
+            from {
+                transform-origin: right bottom;
+                opacity: 1;
+            }
+
+            to {
+                transform-origin: right bottom;
+                transform: rotate3d(0, 0, 1, 90deg);
+                opacity: 0;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$rotateOutUpRight} {
+                animation-name: #{$rotateOutUpRight};
+            }
+        }
+    }
+
+
+    // hinge
+    @if $name == $hinge {
+        @include keyframes (#{$hinge}) {
+            0% {
+                transform-origin: top left;
+                animation-timing-function: ease-in-out;
+            }
+
+            20%, 60% {
+                transform: rotate3d(0, 0, 1, 80deg);
+                transform-origin: top left;
+                animation-timing-function: ease-in-out;
+            }
+
+            40%, 80% {
+                transform: rotate3d(0, 0, 1, 60deg);
+                transform-origin: top left;
+                animation-timing-function: ease-in-out;
+                opacity: 1;
+            }
+
+            to {
+                transform: translate3d(0, 700px, 0);
+                opacity: 0;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$hinge} {
+                animation-name: #{$hinge};
+            }
+        }
+    }
+
+
+    // rollIn
+    @if $name == $rollIn {
+        @include keyframes (#{$rollIn}) {
+            from {
+                opacity: 0;
+                transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$rollIn} {
+                animation-name: #{$rollIn};
+            }
+        }
+    }
+
+
+    // rollOut
+    @if $name == $rollOut {
+        @include keyframes (#{$rollOut}) {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$rollOut} {
+                animation-name: #{$rollOut};
+            }
+        }
+    }
+
+
+    // zoomIn
+    @if $name == $zoomIn {
+        @include keyframes (#{$zoomIn}) {
+            from {
+                opacity: 0;
+                transform: scale3d(.3, .3, .3);
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$zoomIn} {
+                animation-name: #{$zoomIn};
+            }
+        }
+    }
+
+
+    // zoomInDown
+    @if $name == $zoomInDown {
+        @include keyframes (#{$zoomInDown}) {
+            from {
+                opacity: 0;
+                transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+                animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+            }
+
+            60% {
+                opacity: 1;
+                transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$zoomInDown} {
+                animation-name: #{$zoomInDown};
+            }
+        }
+    }
+
+
+    // zoomInLeft
+    @if $name == $zoomInLeft {
+        @include keyframes (#{$zoomInLeft}) {
+            from {
+                opacity: 0;
+                transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);
+                animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+            }
+
+            60% {
+                opacity: 1;
+                transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$zoomInLeft} {
+                animation-name: #{$zoomInLeft};
+            }
+        }
+    }
+
+
+    // zoomInRight
+    @if $name == $zoomInRight {
+        @include keyframes (#{$zoomInRight}) {
+            from {
+                opacity: 0;
+                transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);
+                animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+            }
+
+            60% {
+                opacity: 1;
+                transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$zoomInRight} {
+                animation-name: #{$zoomInRight};
+            }
+        }
+    }
+
+
+    // zoomInUp
+    @if $name == $zoomInUp {
+        @include keyframes (#{$zoomInUp}) {
+            from {
+                opacity: 0;
+                transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);
+                animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+            }
+
+            60% {
+                opacity: 1;
+                transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$zoomInUp} {
+                animation-name: #{$zoomInUp};
+            }
+        }
+    }
+
+
+    // zoomOut
+    @if $name == $zoomOut {
+        @include keyframes (#{$zoomOut}) {
+            from {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+                transform: scale3d(.3, .3, .3);
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$zoomOut} {
+                animation-name: #{$zoomOut};
+            }
+        }
+    }
+
+
+    // zoomOutDown
+    @if $name == $zoomOutDown {
+        @include keyframes (#{$zoomOutDown}) {
+            40% {
+                opacity: 1;
+                transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
+                animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+            }
+
+            to {
+                opacity: 0;
+                transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
+                transform-origin: center bottom;
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$zoomOutDown} {
+                animation-name: #{$zoomOutDown};
+            }
+        }
+    }
+
+
+    // zoomOutLeft
+    @if $name == $zoomOutLeft {
+        @include keyframes (#{$zoomOutLeft}) {
+            40% {
+                opacity: 1;
+                transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);
+            }
+
+            to {
+                opacity: 0;
+                transform: scale(.1) translate3d(-2000px, 0, 0);
+                transform-origin: left center;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$zoomOutLeft} {
+                animation-name: #{$zoomOutLeft};
+            }
+        }
+    }
+
+
+    // zoomOutRight
+    @if $name == $zoomOutRight {
+        @include keyframes (#{$zoomOutRight}) {
+            40% {
+                opacity: 1;
+                transform: scale3d(.475, .475, .475) translate3d(-42px, 0, 0);
+            }
+
+            to {
+                opacity: 0;
+                transform: scale(.1) translate3d(2000px, 0, 0);
+                transform-origin: right center;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$zoomOutRight} {
+                animation-name: #{$zoomOutRight};
+            }
+        }
+    }
+
+
+    // zoomOutUp
+    @if $name == $zoomOutUp {
+        @include keyframes (#{$zoomOutUp}) {
+            40% {
+                opacity: 1;
+                transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+                animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+            }
+
+            to {
+                opacity: 0;
+                transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);
+                transform-origin: center bottom;
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$zoomOutUp} {
+                animation-name: #{$zoomOutUp};
+            }
+        }
+    }
+
+
+    // slideInDown
+    @if $name == $slideInDown {
+        @include keyframes (#{$slideInDown}) {
+            from {
+                transform: translate3d(0, -100%, 0);
+                visibility: visible;
+            }
+
+            to {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$slideInDown} {
+                animation-name: #{$slideInDown};
+            }
+        }
+    }
+
+
+    // slideInLeft
+    @if $name == $slideInLeft {
+        @include keyframes (#{$slideInLeft}) {
+            from {
+                transform: translate3d(-100%, 0, 0);
+                visibility: visible;
+            }
+
+            to {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$slideInLeft} {
+                animation-name: #{$slideInLeft};
+            }
+        }
+    }
+
+
+    // slideInRight
+    @if $name == $slideInRight {
+        @include keyframes (#{$slideInRight}) {
+            from {
+                transform: translate3d(100%, 0, 0);
+                visibility: visible;
+            }
+
+            to {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$slideInRight} {
+                animation-name: #{$slideInRight};
+            }
+        }
+    }
+
+
+    // slideInUp
+    @if $name == $slideInUp {
+        @include keyframes (#{$slideInUp}) {
+            from {
+                transform: translate3d(0, 100%, 0);
+                visibility: visible;
+            }
+
+            to {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$slideInUp} {
+                animation-name: #{$slideInUp};
+            }
+        }
+    }
+
+
+    // slideOutDown
+    @if $name == $slideOutDown {
+        @include keyframes (#{$slideOutDown}) {
+            from {
+                transform: translate3d(0, 0, 0);
+            }
+
+            to {
+                visibility: hidden;
+                transform: translate3d(0, 100%, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$slideOutDown} {
+                animation-name: #{$slideOutDown};
+            }
+        }
+    }
+
+
+    // slideOutLeft
+    @if $name == $slideOutLeft {
+        @include keyframes (#{$slideOutLeft}) {
+            from {
+                transform: translate3d(0, 0, 0);
+            }
+
+            to {
+                visibility: hidden;
+                transform: translate3d(-100%, 0, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$slideOutLeft} {
+                animation-name: #{$slideOutLeft};
+            }
+        }
+    }
+
+
+    // slideOutRight
+    @if $name == $slideOutRight {
+        @include keyframes (#{$slideOutRight}) {
+            from {
+                transform: translate3d(0, 0, 0);
+            }
+
+            to {
+                visibility: hidden;
+                transform: translate3d(100%, 0, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$slideOutRight} {
+                animation-name: #{$slideOutRight};
+            }
+        }
+    }
+
+
+    // slideOutUp
+    @if $name == $slideOutUp {
+        @include keyframes (#{$slideOutUp}) {
+            from {
+                transform: translate3d(0, 0, 0);
+            }
+
+            to {
+                visibility: hidden;
+                transform: translate3d(0, -100%, 0);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$slideOutUp} {
+                animation-name: #{$slideOutUp};
+            }
+        }
+    }
+
+
+    // flash
+    @if $name == $flash {
+        @include keyframes (#{$flash}) {
+            0% {
+                opacity: .4;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$flash} {
+                animation-name: #{$flash};
+            }
+        }
+    }
+
+
+    // spin
+    @if $name == $spin {
+        @keyframes #{$spin} {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @if $keyframes-class {
+            .#{$spin} {
+                animation-name: #{$spin};
+            }
+        }
+    }
+}
+
+
+// Get animation
+// @include get-animate((fadeIn, ...));
+@mixin get-animate($animate-map:(())) {
+    @if $global-animate {
+        @each $name in $animate-map {
+            @if $name {
+                @include getKeyframes($name);
+            }
+        }
+    }
+}
+
+
+// Each active keyframes
+// @if $global-animate {
+//     @each $name in $keyframes-map {
+//         @if $name {
+//             @include getKeyframes($name);
+//         }
+//     }
+// }
+
+// end ANIMATE

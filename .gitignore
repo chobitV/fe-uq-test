@@ -1,0 +1,17 @@
+# SUBLIME TEXT
+#
+*.sublime-workspace
+*.sublime-project
+
+
+
+# GULP
+#
+/node_modules
+
+
+
+# PSD
+#
+/PSD
+/psd

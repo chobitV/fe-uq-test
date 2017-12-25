@@ -1,0 +1,81 @@
+
+
+// =============================================================================
+// VERTICAL RHYTHM
+// =============================================================================
+
+$develop-mode: false;
+$_fs-root: 16px; // font size root (px)
+$_lh-basic: 30px; // line-height basic (px)
+
+$_vl: strip-units($_lh-basic / $_fs-root); // vertical line
+$_vl--rem: $_vl * 1rem; // vertical line (rem)
+
+
+// vr
+@mixin vr($value) {
+    @if unitless($value) { // no unit
+        font-size: strip-units($value / $__fs-root) * 1rem;
+    }
+    @else { // has unit
+        font-size: strip-units($value/$_fs-root)*1rem;
+        margin-bottom: $_vl * 1rem;
+        min-height: $_vl * 1rem;
+        // line-height: $_vl * 1rem;
+
+        @if $value == $_lh-basic or $value > $_lh-basic {
+            line-height: $_vl * 2rem;
+        }
+        @else {
+            line-height: $_vl * 1rem;
+        }
+    }
+}
+
+
+// height
+@mixin vr--h($min-h, $max-h) {
+    width: auto;
+
+    $_min: decimal-round(floor($min-h / $_lh-basic));
+    min-height: $_min * $_vl * 1rem;
+
+    $_max: decimal-round(floor($max-h / $_lh-basic));
+    max-height: $_max * $_vl * 1rem;
+}
+
+
+// function
+@function vr($n) {
+    @return $n * $_vl--rem;
+}
+
+
+// grid
+@mixin vr-grid {
+    @if $develop-mode {
+        background-image: linear-gradient(red, transparent 1px, transparent);
+        background-size: 1px 30px;
+        position: relative;
+
+        > * {
+            background-color: rgba(#000, .03);
+        }
+
+        &:before {
+            content: 'vertical rhythm  >>';
+            position: absolute;
+            left: 100%;
+            top: 1em;
+            color: red;
+            font-weight: 700;
+            font-size: 1em;
+            writing-mode: vertical-rl;
+        }
+    }
+}
+
+// end VERTICAL RHYTHM
+
+
+

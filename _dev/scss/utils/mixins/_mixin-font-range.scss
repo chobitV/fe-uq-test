@@ -1,0 +1,132 @@
+
+
+// =============================================================================
+// FONT FACE
+// =============================================================================
+
+// unicode range list
+$unicode-range-list: (
+    cyrillic: "U+0400-04FF", // Cyrillic Basic
+    latin: "U+0000-007F",  // Latin Basic
+    latin-extended: "U+00A0-00FF, U+0100-017F, U+0180-024F, U+1E00-1EFF", // Latin Extended
+);
+
+//  add unicode range attribute : value
+@mixin add-value-unicode-range($content) {
+    unicode-range: $content;
+}
+
+// get value from unicode range list
+@function get-unicode-range($key) {
+    @if $key != null {
+        @return map-get($unicode-range-list, $key);
+    }
+}
+
+// check value whether it is unicode range list
+@function check-value-unicode-range-list($value) {
+    $is-listed: false;
+
+    @each $range-name, $range-value in $unicode-range-list {
+        @if $range-name == $value {
+            $is-listed: true;
+        }
+    }
+
+    @return $is-listed;
+}
+
+// check value it is unicode string (U+...)
+@function check-value-unicode-string($value) {
+    $is-unicode-string: false;
+    $str-quote: quote($value);
+    $str-u: str-slice($str-quote, 1, 2);
+
+    @if $str-u == "U+" {
+        $is-unicode-string: true;
+    }
+
+    @return $is-unicode-string;
+}
+
+// font-face
+@mixin font-face-range($font-name, $font-style, $font-weight, $font-filename, $font-path, $font-range:all) {
+    @font-face {
+        font-family: quote($font-name);
+        font-style: $font-style;
+        font-weight: $font-weight;
+
+        src: local(quote($font-name)),
+            url($font-path + $font-filename + ".woff2") format("woff2"),
+            url($font-path + $font-filename + ".woff") format("woff");
+
+
+
+        // UNICODE RANGE
+
+        // default value
+        @if $font-range == all {
+            $range-val: "";
+
+            @each $range-name, $range-value in $unicode-range-list {
+                $range-str: $range-str + " " + $range-value + ",";  // get range str
+            }
+
+            $range-str-length: str-length($range-str); // length range str
+            $range-str-slice: str-slice($range-str, 1, $range-str-length - 1); // range str without the last comma
+            $range-str-unquote: unquote($range-str-slice); // range str without quotes
+
+            @include add-value-unicode-range($range-str-unquote);
+        }
+
+
+        // value list
+        @if type-of($font-range) == list {
+            $range-str: "";
+
+            @each $font-range-value in $font-range {
+                $check-range: check-value-unicode-range-list($font-range-value);
+                $check-unicode-str: check-value-unicode-string($font-range);
+
+                // if font-range whether it is unicode range list
+                @if $check-range {
+                    $range-str: $range-str + " " + get-unicode-range($font-range-value) + ",";  // get range str
+                }
+
+                // if font-range is unicode string
+                @else if $check-unicode-str {
+                    $range-str: $range-str + " " + $font-range-value + ",";  // get range str
+                }
+            }
+
+            $range-str-length: str-length($range-str); // length range str
+            $range-str-slice: str-slice($range-str, 1, $range-str-length - 1); // range str without the last comma
+            $range-str-unquote: unquote($range-str-slice); // range str without quotes
+
+            @include add-value-unicode-range($range-str-unquote);
+        }
+
+
+        // value single
+        @else {
+            $check-range: check-value-unicode-range-list($font-range);
+            $check-unicode-str: check-value-unicode-string($font-range);
+
+            // if font-range whether it is unicode range list
+            @if $check-range {
+                $range-str: get-unicode-range($font-range); // get range str
+                $range-str-unquote: unquote($range-str); // range str without quotes
+
+                @include add-value-unicode-range($range-str-unquote);
+            }
+
+            // if font-range is unicode string
+            @else if $check-unicode-str {
+                $range-str-unquote: unquote($font-range); // range str without quotes
+                @include add-value-unicode-range($range-str-unquote);
+            }
+        }
+    }
+}
+
+// end FONT FACE

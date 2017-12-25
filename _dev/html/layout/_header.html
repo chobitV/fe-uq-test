@@ -1,0 +1,36 @@
+<!-- HEADER -->
+<header class="header" >
+    <div class="header__container container">
+        <div class="header__box">
+            <a class="logo" href="#">
+                <img src="img/logo.svg" alt="logo upqode">
+            </a>
+
+            <nav class="nav close" id="navMenu">
+
+                {% include "layout/_menu.html" %}
+
+                <!-- Search -->
+                <div class="search">
+                    <form class="search__form" role="search">
+                        <input class="search__form-input" id="searchInput" type="search" >
+                        <button class="search__form-btn btn-clean" type="submit">
+                            <em class="icon icon-search"></em>
+                            <span class="visually-hidden">Search</span>
+                        </button>
+                    </form>
+                </div>
+            </nav>
+
+            <button class="nav-btn close btn-clean expanded-area" id="navBtn">
+                <span class="nav-btn__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16">
+                        <path fill-rule="evenodd" fill="#333" d="M0 15.999v-2h23v2H0zm0-9h23v2H0v-2zm0-7h23v2H0v-2z"/>
+                    </svg>
+                </span>
+                <span class="visually-hidden">Menu</span>
+            </button>
+        </div>
+    </div>
+</header>
+<!-- end HEADER -->

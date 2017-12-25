@@ -1,0 +1,109 @@
+<!-- Script -->
+
+<script src="js/main.js"></script>
+<script src="js/gumshoe.min.js"></script>
+<script src="js/smooth-scroll.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJItFfOr9jGpjww12CPIUnvfpg5LNGE4w&callback=initMap" async defer></script>
+
+
+<script>
+    // Swiper init
+    var slides = new Swiper ('.slides-container', {
+
+        // optional parameters
+        loop: true,
+        speed: 900,
+
+        // autoplay
+        autoplay: {
+            delay: 8000,
+        },
+
+        // pagination
+        pagination: {
+            el: '.slides-pagination',
+            type: 'bullets',
+            clickable: true,
+            bulletClass: 'slides-pagination__i',
+            bulletActiveClass: 'slides-pagination__i--active',
+        },
+
+        // navigation buttons
+        navigation: {
+            nextEl: '.slides-nav-btn--next',
+            prevEl: '.slides-nav-btn--prev',
+        },
+    })
+</script>
+
+
+<script>
+    // Gumshoe init
+    gumshoe.init({
+        selector: '.menu__link', // Default link selector (must use a valid CSS selector)
+        selectorHeader: '.header', // Fixed header selector (must use a valid CSS selector)
+        container: window, // The element to spy on scrolling in (must be a valid DOM Node)
+        offset: 0, // Distance in pixels to offset calculations
+        activeClass: 'active', // Class to apply to active navigation link and its parent list item
+        scrollDelay: false, // Wait until scrolling has stopped before updating the navigation
+        callback: function (nav) {} // Callback to run after setting active link
+    });
+</script>
+
+
+<script>
+    // SmoothScroll init
+    var scroll = new SmoothScroll('.menu__link', {
+        // Selectors
+        ignore: '[data-scroll-ignore]', // Selector for links to ignore (must be a valid CSS selector)
+        header: null, // Selector for fixed headers (must be a valid CSS selector)
+
+        // Speed & Easing
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        offset: 0, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
+        easing: 'easeInOutCubic', // Easing pattern to use
+        customEasing: function (time) {}, // Function. Custom easing pattern
+
+        // Callback API
+        before: function () {}, // Callback to run before scroll
+        after: function () {} // Callback to run after scroll
+    });
+</script>
+
+
+<script>
+    // Scroll Trigger init
+    document.addEventListener('DOMContentLoaded', function(){
+        var trigger = new ScrollTrigger({
+            toggle: {
+                visible: 'animation',
+                hidden: 'no-animation'
+            },
+            offset: {
+                x: 0,
+                y: 100
+            },
+            addHeight: false,
+            once: true,
+            centerVertical: true
+        }, document.body, window);
+
+    });
+</script>
+
+
+<script>
+    // Map init
+    function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('contactMap'), {
+            center: {lat: 49.825373, lng: 24.032812},
+            zoom: 15,
+            disableDefaultUI: true
+        });
+    }
+</script>
+
+<!-- end Script -->

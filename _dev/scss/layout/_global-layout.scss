@@ -1,0 +1,48 @@
+
+
+// =============================================================================
+// GLOBAL LAYOUT
+// =============================================================================
+
+html {
+    font-size: 100%; // default 16px
+    font-family: $font;
+    color: $base-body-color;
+}
+
+body {
+    min-width: 320px;
+}
+
+
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+
+    // header
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: z-index(header);
+    }
+
+    // main
+    .main {
+        flex: 1 0 auto;
+    }
+
+    // footer
+    .footer {
+        position: relative;
+        z-index: z-index(footer);
+    }
+}
+
+// end GLOBAL LAYOUT
+

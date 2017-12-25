@@ -1,0 +1,120 @@
+
+
+// =============================================================================
+// FOOTER
+// =============================================================================
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 19px $content-padding-m 21px;
+    background-color: #1a1a1a;
+    color: #7a7a7a;
+    text-align: center;
+
+    @media (min-width: $bp-l) {
+        flex-direction: row;
+        padding-left: $content-padding;
+        padding-right: $content-padding;
+    }
+
+
+    // copyright
+    .copyright {
+        @media (min-width: $bp-l) {
+            margin-right: 30px;
+        }
+    }
+
+    // social
+    .social {
+        margin-bottom: 25px;
+
+        @media (min-width: $bp-l) {
+            order: 2;
+            margin-bottom: 0;
+        }
+    }
+}
+
+// end FOOTER
+
+
+
+
+
+// =============================================================================
+// COPYRIGHT
+// =============================================================================
+
+.copyright {
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+}
+
+// end COPYRIGHT
+
+
+
+
+
+// =============================================================================
+// SOCIAL
+// =============================================================================
+
+.social {
+    display: flex;
+    align-items: center;
+
+    // item
+    &__item {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+
+    // link
+    &__link {
+        display: inline-block;
+        line-height: 0;
+        transform: translateZ(0);
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            width: 1px;
+            height: 1px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 #fff;
+            transition: box-shadow;
+        }
+
+        // icon
+        &-icon {
+            position: relative;
+        }
+
+
+        // hover
+        &:hover {
+            .social__link-icon {
+                animation: swing .5s;
+            }
+        }
+
+        // active
+        &:active {
+            &:before {
+                box-shadow: 0 0 15px 13px rgba(#fff, .08);
+            }
+        }
+    }
+}
+
+// end SOCIAL

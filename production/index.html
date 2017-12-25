@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>UPQODE</title>
+        <meta name="description" content="description">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- link preload -->
+        <link rel="preload" href="fonts/lato/Lato-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="img/section-slider/slide-1.jpg" as="image">
+        <!-- style -->
+        <style>
+@font-face{font-family:"Lato";font-style:noraml;font-weight:400;font-display:block;src:local("Lato"),url("fonts/lato/Lato-Regular.woff2") format("woff2"),url("fonts/lato/Lato-Regular.woff") format("woff");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215,U+0100-024F,U+0259,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:"Lato";font-style:noraml;font-weight:300;font-display:block;src:local("Lato"),url("fonts/lato/Lato-Light.woff2") format("woff2"),url("fonts/lato/Lato-Light.woff") format("woff");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215,U+0100-024F,U+0259,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:"Lato";font-style:noraml;font-weight:600;font-display:block;src:local("Lato"),url("fonts/lato/Lato-Semibold.woff2") format("woff2"),url("fonts/lato/Lato-Semibold.woff") format("woff");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215,U+0100-024F,U+0259,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:"Lato";font-style:noraml;font-weight:700;font-display:block;src:local("Lato"),url("fonts/lato/Lato-Bold.woff2") format("woff2"),url("fonts/lato/Lato-Bold.woff") format("woff");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215,U+0100-024F,U+0259,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:"Lato";font-style:noraml;font-weight:800;font-display:block;src:local("Lato"),url("fonts/lato/Lato-Heavy.woff2") format("woff2"),url("fonts/lato/Lato-Heavy.woff") format("woff");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215,U+0100-024F,U+0259,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}
+
+</style>
+        <link rel="stylesheet" href="css/global.css"> </head>
+    <body>
+        <!-- WRAPPER -->
+        <div class="wrapper">
+            <!-- HEADER -->
+            <header class="header">
+                <div class="header__container container">
+                    <div class="header__box">
+                        <a class="logo" href="#">
+                            <img src="img/logo.svg" alt="logo upqode"> </a>
+                        <nav class="nav close" id="navMenu">
+                            <!-- Menu -->
+                            <ul class="menu">
+                                <li class="menu__item">
+                                    <a class="menu__link" href="#">Home</a>
+                                </li>
+                                <li class="menu__item menu__item--has-child">
+                                    <a class="menu__link" href="#choose-us">Choose us</a>
+                                    <ul class="sub-menu sub-menu--close">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">Name Surname</a>
+                                        </li>
+                                        <li class="sub-menu__item sub-menu__item--has-child">
+                                            <a class="sub-menu__link" href="#">Nelson Noa Chris</a>
+                                            <ul class="sub-menu sub-menu--close">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">Name Surname</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">Nelson Noa Chris</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">Name Surname</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">Nelson Noa</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">Name Surname</a>
+                                        </li>
+                                        <li class="sub-menu__item sub-menu__item--has-child">
+                                            <a class="sub-menu__link" href="#">Nelson Noa</a>
+                                            <ul class="sub-menu sub-menu--close">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">Name Surname</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">Nelson Noa Chris</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">Name Surname</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">Nelson Noa</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="#about">About</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="#contact">Contact</a>
+                                </li>
+                            </ul>
+                            <!-- end Menu -->
+                            <!-- Search -->
+                            <div class="search">
+                                <form class="search__form" role="search">
+                                    <input class="search__form-input" id="searchInput" type="search">
+                                    <button class="search__form-btn btn-clean" type="submit">
+                                        <em class="icon icon-search"></em>
+                                        <span class="visually-hidden">Search</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </nav>
+                        <button class="nav-btn close btn-clean expanded-area" id="navBtn">
+                            <span class="nav-btn__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16">
+                                    <path fill-rule="evenodd" fill="#333" d="M0 15.999v-2h23v2H0zm0-9h23v2H0v-2zm0-7h23v2H0v-2z" /> </svg>
+                            </span>
+                            <span class="visually-hidden">Menu</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <!-- end HEADER -->
+            <!-- MAIN -->
+            <main class="main">
+                <!-- SECTION SLIDER -->
+                <section class="section section-slider">
+                    <!-- Slides container -->
+                    <div class="swiper-container slides-container">
+                        <!-- Slides list -->
+                        <div class="swiper-wrapper slides-list">
+                            <div class="swiper-slide slides-list__item slide-box">
+                                <div class="slide-box__img" style="background-image:url('img/section-slider/slide-1.jpg')"></div>
+                                <div class="slide-box__container container">
+                                    <div class="slide-box__descr">
+                                        <h2 class="slide-box__title h h--1 h--upper">Creative
+                                            <span>Design Agency</span>
+                                        </h2>
+                                        <p class="slide-box__text">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slides-list__item slide-box">
+                                <div class="slide-box__img" style="background-image:url('img/section-slider/slide-2.jpg')"></div>
+                                <div class="slide-box__container container">
+                                    <div class="slide-box__descr">
+                                        <h2 class="slide-box__title h h--1 h--upper">Creative
+                                            <span>Design Agency</span>
+                                        </h2>
+                                        <p class="slide-box__text">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slides-list__item slide-box">
+                                <div class="slide-box__img" style="background-image:url('img/section-slider/slide-3.jpg')"></div>
+                                <div class="slide-box__container container">
+                                    <div class="slide-box__descr">
+                                        <h2 class="slide-box__title h h--1 h--upper">Creative
+                                            <span>Design Agency</span>
+                                        </h2>
+                                        <p class="slide-box__text">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pagination -->
+                        <div class="slides-pagination"></div>
+                        <!-- Navigation buttons -->
+                        <div class="slides-nav-btn slides-nav-btn--prev">
+                            <em class="icon icon-arrow icon-arrow--left"></em>
+                        </div>
+                        <div class="slides-nav-btn slides-nav-btn--next">
+                            <em class="icon icon-arrow"></em>
+                        </div>
+                    </div>
+                </section>
+                <!-- end SECTION SLIDER -->
+                <!-- SECTION CHOOSE US -->
+                <section class="section section-choose-us" id="choose-us" data-scroll>
+                    <div class="container">
+                        <!-- Choose us - head -->
+                        <div class="section-head section-head--center">
+                            <h2 class="section-head__title h h--upper h-dcr">
+                                <span class="h-dcr__el">
+                                    <span>Why</span>
+                                </span>
+                                <span class="h-dcr__el h-dcr__el--b">
+                                    <span>choose us</span>
+                                </span>
+                            </h2>
+                            <p class="section-head__txt txt txt--gray">Quisque fermentum, nisl mattis volutpat rhoncus, tellus est congue nibh, ut euismod quam nisi quis felis.
+                                <br>Nullam at scelerisque tellus mattis volutpat rhoncus.</p>
+                        </div>
+                        <!-- end Choose us - head -->
+                        <!-- Choose list -->
+                        <div class="choose-list">
+                            <div class="choose-list__item">
+                                <div class="choose-box">
+                                    <div class="choose-box__icon">
+                                        <img src="img/choose-icons/choose-icon-1.svg" alt=""> </div>
+                                    <h3 class="choose-box__title">Your title</h3>
+                                    <p class="choose-box__text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</p>
+                                    <div class="choose-box__more">
+                                        <span class="choose-box__more-t h h--5 h--upper">See more</span>
+                                        <a class="choose-box__more-l btn-icon btn-icon--link" href="#" tabindex="-1">
+                                            <span class="visually-hidden">Link</span>
+                                        </a>
+                                        <button class="choose-box__more-l btn-icon btn-icon--search-plus" tabindex="-1">
+                                            <span class="visually-hidden">Review</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="choose-list__item">
+                                <div class="choose-box">
+                                    <div class="choose-box__icon">
+                                        <img src="img/choose-icons/choose-icon-2.svg" alt=""> </div>
+                                    <h3 class="choose-box__title">Your title</h3>
+                                    <p class="choose-box__text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</p>
+                                    <div class="choose-box__more">
+                                        <span class="choose-box__more-t h h--5 h--upper">See more</span>
+                                        <a class="choose-box__more-l btn-icon btn-icon--link" href="#" tabindex="-1">
+                                            <span class="visually-hidden">Link</span>
+                                        </a>
+                                        <button class="choose-box__more-l btn-icon btn-icon--search-plus" tabindex="-1">
+                                            <span class="visually-hidden">Review</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="choose-list__item">
+                                <div class="choose-box">
+                                    <div class="choose-box__icon">
+                                        <img src="img/choose-icons/choose-icon-3.svg" alt=""> </div>
+                                    <h3 class="choose-box__title">Your title</h3>
+                                    <p class="choose-box__text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</p>
+                                    <div class="choose-box__more">
+                                        <span class="choose-box__more-t h h--5 h--upper">See more</span>
+                                        <a class="choose-box__more-l btn-icon btn-icon--link" href="#" tabindex="-1">
+                                            <span class="visually-hidden">Link</span>
+                                        </a>
+                                        <button class="choose-box__more-l btn-icon btn-icon--search-plus" tabindex="-1">
+                                            <span class="visually-hidden">Review</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="choose-list__item">
+                                <div class="choose-box">
+                                    <div class="choose-box__icon">
+                                        <img src="img/choose-icons/choose-icon-4.svg" alt=""> </div>
+                                    <h3 class="choose-box__title">Your title</h3>
+                                    <p class="choose-box__text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</p>
+                                    <div class="choose-box__more">
+                                        <span class="choose-box__more-t h h--5 h--upper">See more</span>
+                                        <a class="choose-box__more-l btn-icon btn-icon--link" href="#" tabindex="-1">
+                                            <span class="visually-hidden">Link</span>
+                                        </a>
+                                        <button class="choose-box__more-l btn-icon btn-icon--search-plus" tabindex="-1">
+                                            <span class="visually-hidden">Review</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="choose-list__item">
+                                <div class="choose-box">
+                                    <div class="choose-box__icon">
+                                        <img src="img/choose-icons/choose-icon-5.svg" alt=""> </div>
+                                    <h3 class="choose-box__title">Your title</h3>
+                                    <p class="choose-box__text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</p>
+                                    <div class="choose-box__more">
+                                        <span class="choose-box__more-t h h--5 h--upper">See more</span>
+                                        <a class="choose-box__more-l btn-icon btn-icon--link" href="#" tabindex="-1">
+                                            <span class="visually-hidden">Link</span>
+                                        </a>
+                                        <button class="choose-box__more-l btn-icon btn-icon--search-plus" tabindex="-1">
+                                            <span class="visually-hidden">Review</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end Choose list -->
+                    </div>
+                </section>
+                <!-- SECTION CHOOSE US -->
+                <!-- SECTION ABOUT -->
+                <section class="section section-about" id="about" data-scroll data-scroll-showCallback="sectionAboutAnimate">
+                    <div class="container">
+                        <div class="section-about__box row">
+                            <div class="section-head col-xs-12 col-lg-6 col-lg-offset-r-6">
+                                <h2 class="section-head__title h h--upper h-dcr">
+                                    <span class="h-dcr__el h-dcr__el--b">
+                                        <span>About</span>
+                                    </span>
+                                    <span class="h-dcr__el">
+                                        <span>us</span>
+                                    </span>
+                                </h2>
+                                <p class="section-head__txt txt txt--gray">Quisque fermentum, nisl mattis volutpat rhoncus, tellus est congue nibh, ut euism.
+                                    <br>Nullam at scelerisque tellus mattis volutpat rhoncus.</p>
+                            </div>
+                            <div class="about-img col-xs-12 col-sm-6 col-lg-6">
+                                <img src="img/ipad.png" alt=""> </div>
+                            <div class="about-info col-xs-12 col-sm-6 col-lg-6">
+                                <div class="about-info__text">
+                                    <p>Nullam at scelerisque tellus. Nulla feugiat iaculis ante, non tincidunt ligula scelerisque a. Vestibulum accumsan tincidunt odio vel finibus. Phasellus vestibulum lobortis ligula ut volutpat. Maecenas vitae nibh vel
+                                        purus mollis semper. Nullam tempus feugiat mi id semper. Pellentesque ac posuere augue, vitae mollis enim. Etiam et ullamcorper dolor, a hendrerit quam.</p>
+                                </div>
+                                <ul class="skills-list js-skills">
+                                    <li class="skills-list__item">
+                                        <div class="skills-box" data-percentage="79">
+                                            <span class="skills-box__title">Photoshop</span>
+                                            <span class="skills-box__prcnt"></span>
+                                            <div class="skills-box__line skills-line">
+                                                <span class="skills-line__bg"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="skills-list__item">
+                                        <div class="skills-box" data-percentage="90">
+                                            <span class="skills-box__title">HTML/CSS</span>
+                                            <span class="skills-box__prcnt"></span>
+                                            <div class="skills-box__line skills-line">
+                                                <span class="skills-line__bg"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="skills-list__item">
+                                        <div class="skills-box" data-percentage="69">
+                                            <span class="skills-box__title">Javascript</span>
+                                            <span class="skills-box__prcnt"></span>
+                                            <div class="skills-box__line skills-line">
+                                                <span class="skills-line__bg"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="skills-list__item">
+                                        <div class="skills-box" data-percentage="92">
+                                            <span class="skills-box__title">Wordpress</span>
+                                            <span class="skills-box__prcnt"></span>
+                                            <div class="skills-box__line skills-line">
+                                                <span class="skills-line__bg"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION ABOUT -->
+                <!-- SECTION CONTACT -->
+                <section class="section section-contact" id="contact" data-scroll>
+                    <!-- Section contact - head  -->
+                    <div class="section-contact-head">
+                        <div class="container">
+                            <div class="section-head section-head--center">
+                                <h2 class="section-head__title h h--upper h-dcr">
+                                    <span class="h-dcr__el">
+                                        <span>Get</span>
+                                    </span>
+                                    <span class="h-dcr__el h-dcr__el--b">
+                                        <span>in touch</span>
+                                    </span>
+                                </h2>
+                                <p class="section-head__txt">Quisque fermentum, nisl mattis volutpat rhoncus, tellus est congue nibh, ut euismod quam nisi quis felis.
+                                    <br> Nullam at scelerisque tellus mattis volutpat rhoncus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end Section contact - head  -->
+                    <!-- Contact map block -->
+                    <div class="contact-map">
+                        <!-- Map -->
+                        <div class="contact-map__map" id="contactMap"></div>
+                        <!-- Contact map container -->
+                        <div class="contact-map__container container">
+                            <!-- Contact map box -->
+                            <div class="contact-map__box">
+                                <!-- Contact map form -->
+                                <form class="contact-form" id="contactForm">
+                                    <div class="contact-form__col contact-form__col--half">
+                                        <input class="input input--trns" type="text" required placeholder="Full Name" oninvalid="this.setCustomValidity('Required Field')" oninput="setCustomValidity('')"> </div>
+                                    <div class="contact-form__col contact-form__col--half">
+                                        <input class="input input--trns" type="text" placeholder="E-mail Address"> </div>
+                                    <div class="contact-form__col">
+                                        <textarea class="input input--trns" placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="contact-form__footer contact-form__col">
+                                        <label class="checkbox checkbox--trns" for="contactFormCheckbox">
+                                            <input class="checkbox__i" id="contactFormCheckbox" type="checkbox">
+                                            <span class="checkbox__b"></span>
+                                            <span class="checkbox__t">I like your company</span>
+                                        </label>
+                                        <button class="btn btn--ylw">Send</button>
+                                    </div>
+                                </form>
+                                <!-- end Contact map form -->
+                                <!-- Contact map info -->
+                                <div class="contact-info">
+                                    <ul class="contact-info__block">
+                                        <li class="contact-info__line">
+                                            <span class="contact-info__txt">69/A, Some Street Name</span>
+                                        </li>
+                                        <li class="contact-info__line">
+                                            <span class="contact-info__txt">Your City, code 01234</span>
+                                        </li>
+                                        <li class="contact-info__line">
+                                            <span class="contact-info__txt">Country Name</span>
+                                        </li>
+                                    </ul>
+                                    <ul class="contact-info__block">
+                                        <li class="contact-info__line">
+                                            <a class="contact-info__txt" href="tel:+8609876487495">+880 123 456 78 98</a>
+                                        </li>
+                                        <li class="contact-info__line">
+                                            <a class="contact-info__txt" href="tel:+8609876487495">+860 987 648 74 95</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="contact-info__block">
+                                        <li class="contact-info__line">
+                                            <a class="contact-info__txt" href="mailto:company@mail.com">company@mail.com</a>
+                                        </li>
+                                        <li class="contact-info__line">
+                                            <a class="contact-info__txt" href="mailto:sales@mail.com">sales@mail.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- end Contact map info -->
+                            </div>
+                            <!-- end Contact map box -->
+                        </div>
+                        <!-- end Contact map container -->
+                    </div>
+                    <!-- end Contact map block -->
+                </section>
+                <!-- SECTION CONTACT -->
+            </main>
+            <!-- end MAIN -->
+            <!-- FOOTER -->
+            <footer class="footer">
+                <!-- Social -->
+                <ul class="social">
+                    <li class="social__item">
+                        <a class="social__link expanded-area" href="#">
+                            <img class="social__link-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAVCAMAAACnruT/AAAAeFBMVEUAAABheK1mgLZifatmgbdjgLZlgbhmgrhifapmg7pngrlmgLdmgLdlgbdkf7VifrFce7Fceq5heq5eeK5if7Nngrhog7tlgbdmgLZlgrllgrhmgLdmfbRifatHa5pifbBmfLFLbqBifrRjfbRSbJ5ngrhog7tuiMFaxjtuAAAAJXRSTlMACNaB0w7u2nv18MynoJCLTz4wIxX58OrbwbqrmYV8eGhoWj46aYMQsgAAAG9JREFUCNelzDcShEAMRFFpdgZvdoH1Die4/w1pFdQEpPzoBVKTVv3zLHtXyj4W7QzWgXh3MxDb8AL/4PvgHMPRJGJJYy5h07iGqbD6eg0N7l+yNY309K6pLVIgyD+l8ztrp50NH/cXfmyObkmSqhcotA6l5U8a0AAAAABJRU5ErkJggg=="
+                                alt="social facebook icon">
+                            <span class="visually-hidden">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link expanded-area" href="#">
+                            <img class="social__link-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAMAAADqmnyMAAAA51BMVEUAAADnZ1DnaVHlZ07oalHlaFDoaFDmaVDpaVLtbVbdY0jpaFHnaU/oZk/oaVHeZE7hZ0nqa1S5SifnZ1HlYUzsbFXkZk7palLhY03hZk3maVHoaVHnaFHlX0vnaFHlaE/maFHoZ0/gZU3oZ1DfYUnjZU7oZkvjX0rCTibnZ06JOynSXkToZVDrcFboalPnaFHpaVPnaFHhZU/6dVrwbFHnaVH1cFfgY0/gZk/talTwblPpZ1HGU0TRXD76clnhaE7qaFJQJBzDXzzfZEXhZEu1SSO7STnoa1PqbFXzcFXobVTpalPtb1WF3LigAAAAR3RSTlMAke3m4KujclxZU05JRDwtGRUQDgbk4dDOycO8mJKMi4d1bWRhOCglFBMQCgT8/PTt1NTMvLSyp5yRhH1zYl1YVUtGPDYoHqc5BvMAAADQSURBVBjTTY5VjsNAEERrzGyvHWba8PKGGceB+58nE48izfvoKj211I0XqWjIpqdF4Ly3qhpZWANWze837lrjdVOiswAMKx0m7njZseXbH9Dvhqv0Kez2gdr9DCB38Qc5OSN9yhl5CpRil8lJ3IZt2ERqbg0P2MQFJvNFPHGUFP+FXFWnqvKrpsQywdcVGvBq//TwokgbvESdITimrlJagYiVrxmeo8QNwR0+ys9of2UFWbp2ktR+BVm56Un+LwUZZClxfbc8h0ivXhiR+l5UDxgpEzxOK6r/AAAAAElFTkSuQmCC"
+                                alt="social google plus icon">
+                            <span class="visually-hidden">Google plus</span>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link expanded-area" href="#">
+                            <img class="social__link-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAARCAMAAAAIRmf1AAAAz1BMVEUAAABt0fVw1vtx1/xu0/lw1vlv1flu0PRjxehx1flv1flx1vpw1vpv1vts0PJt0/lsz/Nw1/trz/Nuz/JpzO1u0vlWsMdx1vxy2f9y2/112Pxw1vpv0vVx2v9vzvFrwd9w2/113v5x2f9kv9tz5/9z5P9w1fpv1PlIh59u1Phx3v9qyO5fvd1w1/ttzvJmoLRkmqxmwuZNlrBrzfNYqr5ryepFq7VxyudjwOFjnbVds8l54v9t0PZx1vpx1/ty2Pxz3v9y2vyA8/905P977f5eRsVvAAAAPXRSTlMAGPTexLevYQr98ebXioV9ZklGOy8nHvf27+bb2s/Bv7mrpqSfnZyamZaOjoJ0dFNSUUpDQzQoJiYdFA4E+rUXCwAAAK5JREFUGNNNy9USwjAURdFTpbi1xd3dnSQt8P/fREgbJvvlzqy5B0qliZXzAQelP+UpIcwoFBykhzEdOPFow0Mm7JSFLcLILA3zZFDtHe9AjhFREbjV+GWZWcKKtkm+2naJiEZE0h4w0okaNZ/AuU5Ve03Bu/RTin32P9NWhmImhJkBk0L1E0TOsqlLS0DmtyKheSmPTZsKSskvd2C8GRdWybqI04rrsW3b2d0Vsi/gfing4ecpiQAAAABJRU5ErkJggg=="
+                                alt="social twitter icon">
+                            <span class="visually-hidden">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link expanded-area" href="#">
+                            <img class="social__link-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAMAAABxCz6aAAABaFBMVEUAAADWa5XqdpzYZ5XodZzqdZ3bcJrkb5zwepvpd5zndZvreJzodpzndZvkcpvpd5vkc5vsc5zDYH3odZzyeKHreJ3teJ7mdp3mc5vpdJvpdpzfbJfze57mdpzmcpvjbpjbcpvhcZfKbYvqdp3gb5fNYY/QaJLqdpyYZHTQapDpeZ3mdpznd5n3gJ/pdZ36fp7/gq3FZIPqdpv/g63se53rdJnec7LbcZXndJrwfJ3pfqrod5zodpz4fJ3/fp3ZbozXbZbndZzkdof/iaHWbaj/hqDpd5vicprudp3xd5/seZ/6f53haZmJR5L6fKrSY5fodJ78faTjc5yMRpGjUGfNXZfzfJvmdZr5e6FtNUnJaIi5bJmtWXWRY3G8XoakU3AuHiPndJjgbpcbDRhfL5QWDBDpd53qeJ3xe6HreJ7ndpzteZ/ndZ38gajrep7pd5v3fqXze6Pue5/td538gqP4g6D3f5/weZ2olRJxAAAAZnRSTlMACRYM7nIaEQ/h1rGWf1xAKyEE9O/m2NLKq6aYlo6Jg1lVVUZFPzs5JAfu6t3b2dfV08/OzsrHx8XCwb++vbSysa6uq6ejoZ6dkZB+enVsbGtlYGBfXlJOSEU1MjAvKygnJh8QDg1sMHXlAAABMklEQVQY003P1W7DQBRF0WOHmTlpOE3KzMzMzHjHYSr8fseOq3a9zZaORhcqQyy0vJ3K44/e5sJSmajsjRug6jazEAw+kg09qk1LVLvAeYs3afIdMs0Yf7A+AdOlZnULT1ENgL0aybULaWn4DPlA4xAQe3gpEyMnrgo49pYrfiOSRHWPOXyU5av0TJ0RsQxeHE4Rshs9LN/EG9lgNIiuu+uDsKmy4Hb4g1NBs9YK64BJK1VLjPXvAwI4lxMWUvTqjAAeotaYziHAxkvla16Pwq4FWYm4E2QYlaprgN1E7WchwIiKORgHK80VvK3WlQMiNWKzAnD6Oep+nVB247AzKl6CW89h8aNEnFYveoqb6NhpKI2KSfhGNFC4N6ijFUFCxC/7XFv+VorjP+E2odOl7tXpD3aST2rtoPMPAAAAAElFTkSuQmCC"
+                                alt="social dribbble icon">
+                            <span class="visually-hidden">Dribbble</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Copyright -->
+                <div class="copyright">
+                    <span>Copyright © Company. All Rights Reserved 2016</span>
+                </div>
+            </footer>
+            <!-- end FOOTER -->
+        </div>
+        <!-- end WRAPPER -->
+        <!-- Script -->
+        <script src="js/main.js"></script>
+        <script src="js/gumshoe.min.js"></script>
+        <script src="js/smooth-scroll.min.js"></script>
+        <script src="js/ScrollTrigger.min.js"></script>
+        <script src="js/swiper.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJItFfOr9jGpjww12CPIUnvfpg5LNGE4w&callback=initMap" async defer></script>
+        <script>
+            // Swiper init
+            var slides = new Swiper('.slides-container',
+            {
+                // optional parameters
+                loop: true,
+                speed: 900,
+                // autoplay
+                autoplay:
+                {
+                    delay: 8000,
+                },
+                // pagination
+                pagination:
+                {
+                    el: '.slides-pagination',
+                    type: 'bullets',
+                    clickable: true,
+                    bulletClass: 'slides-pagination__i',
+                    bulletActiveClass: 'slides-pagination__i--active',
+                },
+                // navigation buttons
+                navigation:
+                {
+                    nextEl: '.slides-nav-btn--next',
+                    prevEl: '.slides-nav-btn--prev',
+                },
+            })
+
+        </script>
+        <script>
+            // Gumshoe init
+            gumshoe.init(
+            {
+                selector: '.menu__link', // Default link selector (must use a valid CSS selector)
+                selectorHeader: '.header', // Fixed header selector (must use a valid CSS selector)
+                container: window, // The element to spy on scrolling in (must be a valid DOM Node)
+                offset: 0, // Distance in pixels to offset calculations
+                activeClass: 'active', // Class to apply to active navigation link and its parent list item
+                scrollDelay: false, // Wait until scrolling has stopped before updating the navigation
+                callback: function(nav) {} // Callback to run after setting active link
+            });
+
+        </script>
+        <script>
+            // SmoothScroll init
+            var scroll = new SmoothScroll('.menu__link',
+            {
+                // Selectors
+                ignore: '[data-scroll-ignore]', // Selector for links to ignore (must be a valid CSS selector)
+                header: null, // Selector for fixed headers (must be a valid CSS selector)
+                // Speed & Easing
+                speed: 500, // Integer. How fast to complete the scroll in milliseconds
+                offset: 0, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
+                easing: 'easeInOutCubic', // Easing pattern to use
+                customEasing: function(time) {}, // Function. Custom easing pattern
+                // Callback API
+                before: function() {}, // Callback to run before scroll
+                after: function() {} // Callback to run after scroll
+            });
+
+        </script>
+        <script>
+            // Scroll Trigger init
+            document.addEventListener('DOMContentLoaded', function()
+            {
+                var trigger = new ScrollTrigger(
+                {
+                    toggle:
+                    {
+                        visible: 'animation',
+                        hidden: 'no-animation'
+                    },
+                    offset:
+                    {
+                        x: 0,
+                        y: 100
+                    },
+                    addHeight: false,
+                    once: true,
+                    centerVertical: true
+                }, document.body, window);
+            });
+
+        </script>
+        <script>
+            // Map init
+            function initMap()
+            {
+                // Create a map object and specify the DOM element for display.
+                var map = new google.maps.Map(document.getElementById('contactMap'),
+                {
+                    center:
+                    {
+                        lat: 49.825373,
+                        lng: 24.032812
+                    },
+                    zoom: 15,
+                    disableDefaultUI: true
+                });
+            }
+
+        </script>
+        <!-- end Script -->
+    </body>
+</html>

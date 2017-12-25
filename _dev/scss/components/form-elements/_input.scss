@@ -1,0 +1,59 @@
+
+
+// =============================================================================
+// INPUT
+// =============================================================================
+
+.input {
+    width: 100%;
+    max-width: 100%;
+    height: 50px;
+    padding: 12px 20px 10px;
+    background-color: #fff;
+    border: solid 1px #979895;
+    font-family: $font;
+    font-size: 1rem;
+    color: #333;
+    appearance: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    // placeholder
+    @include placeholder-content {
+        transition: opacity .3s, text-indent .3s;
+        color: currentColor;
+    }
+
+    // focus
+    &:focus {
+        @include placeholder-content {
+            opacity: 0;
+            text-indent: -5px;
+        }
+    }
+
+    // disabled
+    &[disabled] {
+        opacity: 0.1;
+    }
+
+
+    // transparent modification
+    &--trns {
+        background-color: transparent;
+        color: #b7b7b7;
+
+        @include placeholder-content {
+            color: #b7b7b7;
+        }
+    }
+}
+
+// textarea correct
+textarea.input {
+    height: auto;
+    min-height: 144px;
+    resize: none;
+}
+
+// end INPUT

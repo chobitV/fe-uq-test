@@ -1,0 +1,65 @@
+
+
+// =============================================================================
+// HEADER
+// =============================================================================
+
+.header {
+    background-color: #fff;
+
+    // header box
+    &__box {
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 19px;
+
+        @media (min-width: $bp-d) {
+            align-items: baseline;
+        }
+
+
+        // logo
+        .logo {
+            margin-right: 30px;
+        }
+
+        // navigation
+        .nav {
+            @media (min-width: $bp-d) {
+                margin-left: auto;
+            }
+        }
+
+        // nav btn
+        .nav-btn {
+            margin-left: auto;
+
+            @media (min-width: $bp-d) {
+                display: none;
+            }
+        }
+    }
+}
+
+// end HEADER
+
+
+
+
+
+// =============================================================================
+// LOGO
+// =============================================================================
+
+.logo {
+    display: inline-block;
+
+    img[src$=".svg"] {
+        transform: scaleX(1.04);
+        margin: 0 3px;
+    }
+}
+
+// end LOGO
+

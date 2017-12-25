@@ -1,0 +1,53 @@
+<!-- SECTION CHOOSE US -->
+<section class="section section-choose-us" id="choose-us" data-scroll>
+
+    <div class="container">
+
+        <!-- Choose us - head -->
+        <div class="section-head section-head--center">
+
+            <h2 class="section-head__title h h--upper h-dcr">
+                <span class="h-dcr__el"><span>Why</span></span>
+                <span class="h-dcr__el h-dcr__el--b"><span>choose us</span></span>
+            </h2>
+
+            <p class="section-head__txt txt txt--gray">Quisque fermentum, nisl mattis volutpat rhoncus, tellus est congue nibh, ut euismod quam nisi quis felis.<br>Nullam at scelerisque tellus mattis volutpat rhoncus.</p>
+
+        </div>
+        <!-- end Choose us - head -->
+
+
+
+        <!-- Choose list -->
+        <div class="choose-list">
+
+            {% for i in range(1, 6) -%}
+                <div class="choose-list__item">
+                    <div class="choose-box">
+                        <div class="choose-box__icon">
+                            <img src="img/choose-icons/choose-icon-{{i}}.svg" alt="">
+                        </div>
+                        <h3 class="choose-box__title">Your title</h3>
+                        <p class="choose-box__text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</p>
+
+                        <div class="choose-box__more">
+                            <span class="choose-box__more-t h h--5 h--upper">See more</span>
+
+                            <a class="choose-box__more-l btn-icon btn-icon--link" href="#" tabindex="-1">
+                                <span class="visually-hidden">Link</span>
+                            </a>
+
+                            <button class="choose-box__more-l btn-icon btn-icon--search-plus" tabindex="-1">
+                                <span class="visually-hidden">Review</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            {%- endfor %}
+
+        </div>
+        <!-- end Choose list -->
+
+    </div>
+</section>
+<!-- SECTION CHOOSE US -->

@@ -1,0 +1,101 @@
+
+
+// =============================================================================
+// SECTION
+// =============================================================================
+
+.section {
+
+    // SECTION ANIMATION
+    @media (min-width: $bp-d) {
+
+        .h-dcr__el {
+            overflow: hidden;
+
+            span {
+                display: inline-block;
+                transition: transform 1s ease;
+            }
+
+            &:first-child span {
+                transform: translateX(120%);
+            }
+
+            &:last-child span {
+                transform: translateX(-120%);
+            }
+        }
+
+        &.animation {
+            .h-dcr__el {
+                span {
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+}
+
+// end SECTION
+
+
+
+
+
+// =============================================================================
+// SECTION HEAD
+// =============================================================================
+
+.section-head {
+
+    // title
+    &__title {
+        margin-bottom: 0.29em;
+        letter-spacing: 0.04em;
+    }
+
+    // text, subtitle
+    &__txt {
+        letter-spacing: 0.04em;
+    }
+
+
+    // text align center
+    &--center {
+        text-align: center;
+    }
+}
+
+// end SECTION HEAD
+
+
+
+
+
+// =============================================================================
+// HEADING DECORATION STYLE
+// =============================================================================
+
+.h-dcr {
+
+    // element
+    &__el {
+        display: inline-block;
+
+        // blue
+        &--b {
+            color: #009dda;
+        }
+
+        // yellow
+        &--y {
+            color: color(yellow);
+        }
+    }
+}
+
+// end HEADING DECORATION STYLE
+
+
+
+

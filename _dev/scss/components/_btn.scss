@@ -1,0 +1,132 @@
+
+
+// =============================================================================
+// BTN VAR
+// =============================================================================
+
+// map btn size
+$map-btn-font-size: (
+    // name class, font-size, padding,
+    // (small, null, 5px 10px),
+);
+
+
+// map bg color
+$map-btn-bg-color: (
+    // name class, bg color, color, hover bg color, hover color
+    (ylw, color(yellow), #373737, #979895, #fff),
+);
+
+// end BTN VAR
+
+
+
+
+
+// =============================================================================
+// EXTEND BTN
+// =============================================================================
+
+%btn {
+    display: inline-block;
+    padding: 14px 42px 12px;
+
+    background-color: #f4f4f4;
+    color: #373737;
+
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-family: $font;
+    text-align: center;
+    white-space: normal;
+    text-align: center;
+
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+
+    user-select: none;
+    transition: background-color .1s;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:focus {
+        outline: 1px solid #4d90fe;
+    }
+
+    &:active {
+        box-shadow: inset 0px 5px 10px 1px rgba(#000, 0.15);
+    }
+}
+
+// end BTN
+
+
+
+
+
+// =============================================================================
+// CUSTOM BTN
+// =============================================================================
+
+.btn {
+    @extend %btn;
+
+
+    // size
+    @each $class, $font-size, $padding in $map-btn-font-size {
+        &--#{$class} {
+            font-size: $font-size;
+            padding: $padding;
+        }
+    }
+
+    // style
+    @each $class, $bg-color, $color, $bg-color__hover, $color__hover in $map-btn-bg-color {
+        &--#{$class} {
+            background-color: $bg-color;
+            color: $color;
+
+            &:hover {
+                @if $bg-color__hover {
+                    background-color: $bg-color__hover;
+                }
+
+                @if $color__hover {
+                    color: $color__hover;
+                }
+            }
+
+            &:active {
+                @if $bg-color__hover {
+                    background-color: lighten($bg-color__hover, 5%);
+                }
+
+                @if $color__hover {
+                    color: $color__hover;
+                }
+            }
+        }
+    }
+
+    // disabled
+    &--disabled, &[disabled] {
+        cursor: not-allowed;
+        pointer-events: none;
+        background-color: #fff;
+        color: #acadb0;
+        box-shadow: inset 0 0 0 1px #cccbca;
+    }
+}
+
+
+// btn clean
+.btn-clean {
+    background-color: transparent;
+    outline: none;
+    padding: 0;
+}
+
+// end CUSTOM BTN
