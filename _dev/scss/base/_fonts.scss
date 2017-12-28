@@ -8,15 +8,15 @@
 $lato-name: "Lato";
 // $lato-path: "../fonts/lato/";
 $lato-path: "fonts/lato/"; // inline css
-@include font-face($lato-name, noraml, 400, Lato-Regular, $lato-path);
+@include font-face($lato-name, normal, 400, Lato-Regular, $lato-path);
 
 // @include font-face($lato-name, noraml, 100, Lato-Hairline, $lato-path);
 // @include font-face($lato-name, noraml, 200, Lato-Thin, $lato-path);
-@include font-face($lato-name, noraml, 300, Lato-Light, $lato-path);
+@include font-face($lato-name, normal, 300, Lato-Light, $lato-path);
 // @include font-face($lato-name, noraml, 500, Lato-Medium, $lato-path);
-@include font-face($lato-name, noraml, 600, Lato-Semibold, $lato-path);
-@include font-face($lato-name, noraml, 700, Lato-Bold, $lato-path);
-@include font-face($lato-name, noraml, 800, Lato-Heavy, $lato-path);
+@include font-face($lato-name, normal, 600, Lato-Semibold, $lato-path);
+@include font-face($lato-name, normal, 700, Lato-Bold, $lato-path);
+@include font-face($lato-name, normal, 800, Lato-Heavy, $lato-path);
 // @include font-face($lato-name, noraml, 900, Lato-Black, $lato-path);
 
 // end FONT
